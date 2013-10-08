@@ -25,6 +25,11 @@
 		18C7ADCC1802CC7300F62819 /* Page2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C7ADCA1802CC7300F62819 /* Page2.m */; };
 		18D79E611802FE7500644EC1 /* Page1.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D79E5F1802FE7500644EC1 /* Page1.m */; };
 		18D79E6A180301EC00644EC1 /* Page3.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D79E69180301EC00644EC1 /* Page3.m */; };
+		18F981131804361600FFE3A4 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F981121804361600FFE3A4 /* back.png */; };
+		18F98121180450EB00FFE3A4 /* TwoKeyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F98120180450EB00FFE3A4 /* TwoKeyButton.xib */; };
+		18F981241804510D00FFE3A4 /* TwoKeyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F981231804510D00FFE3A4 /* TwoKeyButton.m */; };
+		18F981271804530C00FFE3A4 /* on1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F981251804530C00FFE3A4 /* on1.png */; };
+		18F981281804530C00FFE3A4 /* off1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F981261804530C00FFE3A4 /* off1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,12 @@
 		18D79E5F1802FE7500644EC1 /* Page1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page1.m; sourceTree = "<group>"; };
 		18D79E68180301EC00644EC1 /* Page3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page3.h; sourceTree = "<group>"; };
 		18D79E69180301EC00644EC1 /* Page3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page3.m; sourceTree = "<group>"; };
+		18F981121804361600FFE3A4 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		18F98120180450EB00FFE3A4 /* TwoKeyButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoKeyButton.xib; sourceTree = "<group>"; };
+		18F981221804510D00FFE3A4 /* TwoKeyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoKeyButton.h; sourceTree = "<group>"; };
+		18F981231804510D00FFE3A4 /* TwoKeyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoKeyButton.m; sourceTree = "<group>"; };
+		18F981251804530C00FFE3A4 /* on1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on1.png; sourceTree = "<group>"; };
+		18F981261804530C00FFE3A4 /* off1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +105,8 @@
 		18C7AD7F1802BFEB00F62819 = {
 			isa = PBXGroup;
 			children = (
+				18F981141804409F00FFE3A4 /* Custom */,
+				18F981111804361600FFE3A4 /* images */,
 				18C7ADC31802CB5500F62819 /* UI */,
 				18C7AD911802BFEC00F62819 /* light_controller */,
 				18C7ADB01802BFEC00F62819 /* light_controllerTests */,
@@ -180,6 +193,26 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
+		18F981111804361600FFE3A4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				18F981251804530C00FFE3A4 /* on1.png */,
+				18F981261804530C00FFE3A4 /* off1.png */,
+				18F981121804361600FFE3A4 /* back.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		18F981141804409F00FFE3A4 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				18F98120180450EB00FFE3A4 /* TwoKeyButton.xib */,
+				18F981221804510D00FFE3A4 /* TwoKeyButton.h */,
+				18F981231804510D00FFE3A4 /* TwoKeyButton.m */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,8 +292,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F981271804530C00FFE3A4 /* on1.png in Resources */,
+				18F981131804361600FFE3A4 /* back.png in Resources */,
 				18C7ADA41802BFEC00F62819 /* Images.xcassets in Resources */,
 				18C7AD961802BFEC00F62819 /* InfoPlist.strings in Resources */,
+				18F98121180450EB00FFE3A4 /* TwoKeyButton.xib in Resources */,
+				18F981281804530C00FFE3A4 /* off1.png in Resources */,
 				18C7AD9F1802BFEC00F62819 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F981241804510D00FFE3A4 /* TwoKeyButton.m in Sources */,
 				18D79E611802FE7500644EC1 /* Page1.m in Sources */,
 				18C7ADA21802BFEC00F62819 /* ViewController.m in Sources */,
 				18C7AD9C1802BFEC00F62819 /* AppDelegate.m in Sources */,

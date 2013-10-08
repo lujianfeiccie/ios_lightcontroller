@@ -83,7 +83,7 @@
     {
         _m_pageC = [[UIPageControl alloc]initWithFrame:CGRectMake(60,420,200,30)];//页面控制条区域
         _m_pageC.backgroundColor = [UIColor clearColor]; //透明背景
-        _m_pageC.currentPageIndicatorTintColor = [UIColor redColor];//当前页面圆点颜色
+        _m_pageC.currentPageIndicatorTintColor = [UIColor whiteColor];//当前页面圆点颜色
         _m_pageC.pageIndicatorTintColor = [UIColor blackColor];//未选中圆点颜色
         _m_pageC.numberOfPages = NUM_OF_PAGES;//页面数
         

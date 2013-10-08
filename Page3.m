@@ -7,7 +7,7 @@
 //
 
 #import "Page3.h"
-
+#import "Constant.h"
 @interface Page3 ()
 
 @end
@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [_imageview setImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
 }
 
 - (void)didReceiveMemoryWarning

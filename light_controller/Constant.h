@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 extern NSInteger const NUM_OF_PAGES;
+extern NSString* const BACKGROUND_IMAGE;
 @interface Constant : NSObject
 
 @end

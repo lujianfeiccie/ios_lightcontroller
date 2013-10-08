@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface Page1 : UIViewController
+#import "TwoKeyButton.h"
+@interface Page1 : UIViewController<TwoKeyButtonDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
+@property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn1;
 
 @end

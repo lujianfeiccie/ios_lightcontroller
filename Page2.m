@@ -7,7 +7,7 @@
 //
 
 #import "Page2.h"
-
+#import "Constant.h"
 @interface Page2 ()
 
 @end
@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [_imageview setImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
 }
 
 - (void)didReceiveMemoryWarning

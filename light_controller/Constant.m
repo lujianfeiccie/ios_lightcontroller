@@ -8,6 +8,7 @@
 
 #import "Constant.h"
 NSInteger const NUM_OF_PAGES=3;
+NSString* const BACKGROUND_IMAGE=@"back.png";
 @implementation Constant
 
 @end
