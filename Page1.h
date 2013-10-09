@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TwoKeyButton.h"
-@interface Page1 : UIViewController<TwoKeyButtonDelegate>
+#import "FourKeyButton.h"
+@interface Page1 : UIViewController<TwoKeyButtonDelegate,FourKeyButtonDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn1;
+@property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn2;
+@property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn3;
+@property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn4;
+
+@property (weak, nonatomic) IBOutlet FourKeyButton *fourkeybtn;
 
 @end

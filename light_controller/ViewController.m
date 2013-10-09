@@ -28,6 +28,7 @@
 -(void)buildLayout
 {
     self.m_sc.delegate =self;
+    [self.m_pageC addTarget:self action:@selector(tapBotAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.m_sc];
     [self.view addSubview:self.m_pageC];
 }
@@ -81,7 +82,7 @@
 {
     if (!_m_pageC)
     {
-        _m_pageC = [[UIPageControl alloc]initWithFrame:CGRectMake(60,420,200,30)];//页面控制条区域
+        _m_pageC = [[UIPageControl alloc]initWithFrame:CGRectMake(60,430,200,30)];//页面控制条区域
         _m_pageC.backgroundColor = [UIColor clearColor]; //透明背景
         _m_pageC.currentPageIndicatorTintColor = [UIColor whiteColor];//当前页面圆点颜色
         _m_pageC.pageIndicatorTintColor = [UIColor blackColor];//未选中圆点颜色
@@ -90,7 +91,15 @@
     }
     return _m_pageC;
 }
+- (void)tapBotAction:(id)sender{
+   
+   // int index = [(UIButton *)sender tag];
+    NSInteger index = _m_pageC.currentPage;
+    NSLog(@"tapBotAction %i",index);
 
+    NSInteger width = self.view.bounds.size.width;
+    [_m_sc setContentOffset:CGPointMake(index * width, 0) animated:YES];
+}
 #pragma mark
 #pragma mark UIScrollViewDelegate method
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView

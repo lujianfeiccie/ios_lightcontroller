@@ -18,8 +18,8 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         // Initialization code
-       // enable = NO;
-       //btnID = 1;
+       _enable = NO;
+       //_btnID = 1;
     }
     
    // NSLog(@"initWithCoder %@",[NSString stringWithFormat:@"enable %i btnID %i",_enable,_btnID]);
@@ -34,13 +34,13 @@
 {
     // Drawing code
     if (_enable == YES) {
-        NSString* image_name = [NSString stringWithFormat:@"on%i.png",_btnID];
-       // NSLog(image_name,nil);
+        NSString* image_name = [NSString stringWithFormat:@"btn_on%i.png",_btnID];
+        //NSLog(image_name,nil);
         [self setBackgroundImage:[UIImage imageNamed:image_name ]  forState:UIControlStateNormal];
     }else{
-         NSString* image_name = [NSString stringWithFormat:@"off%i.png",_btnID];
+         NSString* image_name = [NSString stringWithFormat:@"btn_off%i.png",_btnID];
         [self setBackgroundImage:[UIImage imageNamed:image_name ]  forState:UIControlStateNormal];
-      //  NSLog(image_name,nil);
+       // NSLog(image_name,nil);
     }
 }
 -(void) butonPress{

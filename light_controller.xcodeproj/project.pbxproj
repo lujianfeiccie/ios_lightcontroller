@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C274B318057A1E0051F64C /* four_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AA18057A1E0051F64C /* four_down.png */; };
+		18C274B418057A1E0051F64C /* four_left_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AB18057A1E0051F64C /* four_left_down.png */; };
+		18C274B518057A1E0051F64C /* four_left_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AC18057A1E0051F64C /* four_left_up.png */; };
+		18C274B618057A1E0051F64C /* four_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AD18057A1E0051F64C /* four_left.png */; };
+		18C274B718057A1E0051F64C /* four_right_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AE18057A1E0051F64C /* four_right_down.png */; };
+		18C274B818057A1E0051F64C /* four_right_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AF18057A1E0051F64C /* four_right_up.png */; };
+		18C274B918057A1E0051F64C /* four_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274B018057A1E0051F64C /* four_right.png */; };
+		18C274BA18057A1E0051F64C /* four_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274B118057A1E0051F64C /* four_up.png */; };
+		18C274BB18057A1E0051F64C /* four.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274B218057A1E0051F64C /* four.png */; };
+		18C274BE18057A4F0051F64C /* FourKeyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C274BD18057A4F0051F64C /* FourKeyButton.m */; };
 		18C7AD8C1802BFEC00F62819 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C7AD8B1802BFEC00F62819 /* Foundation.framework */; };
 		18C7AD8E1802BFEC00F62819 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C7AD8D1802BFEC00F62819 /* CoreGraphics.framework */; };
 		18C7AD901802BFEC00F62819 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C7AD8F1802BFEC00F62819 /* UIKit.framework */; };
@@ -25,11 +35,25 @@
 		18C7ADCC1802CC7300F62819 /* Page2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C7ADCA1802CC7300F62819 /* Page2.m */; };
 		18D79E611802FE7500644EC1 /* Page1.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D79E5F1802FE7500644EC1 /* Page1.m */; };
 		18D79E6A180301EC00644EC1 /* Page3.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D79E69180301EC00644EC1 /* Page3.m */; };
+		18EBCBEB1805A7FB005ED434 /* btn_off1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBE51805A7FB005ED434 /* btn_off1.png */; };
+		18EBCBEC1805A7FB005ED434 /* btn_off2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBE61805A7FB005ED434 /* btn_off2.png */; };
+		18EBCBED1805A7FB005ED434 /* btn_off3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBE71805A7FB005ED434 /* btn_off3.png */; };
+		18EBCBEE1805A7FB005ED434 /* btn_on1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBE81805A7FB005ED434 /* btn_on1.png */; };
+		18EBCBEF1805A7FB005ED434 /* btn_on2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBE91805A7FB005ED434 /* btn_on2.png */; };
+		18EBCBF01805A7FB005ED434 /* btn_on3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBEA1805A7FB005ED434 /* btn_on3.png */; };
+		18EBCBF31805A886005ED434 /* btn_off4.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBF11805A886005ED434 /* btn_off4.png */; };
+		18EBCBF41805A886005ED434 /* btn_on4.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBF21805A886005ED434 /* btn_on4.png */; };
+		18EBCBFD1805AEAD005ED434 /* alarm.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBF51805AEAD005ED434 /* alarm.png */; };
+		18EBCBFE1805AEAD005ED434 /* meeting.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBF61805AEAD005ED434 /* meeting.png */; };
+		18EBCBFF1805AEAD005ED434 /* mode.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBF71805AEAD005ED434 /* mode.png */; };
+		18EBCC001805AEAD005ED434 /* night.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBF81805AEAD005ED434 /* night.png */; };
+		18EBCC011805AEAD005ED434 /* reading.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBF91805AEAD005ED434 /* reading.png */; };
+		18EBCC021805AEAD005ED434 /* recreation.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBFA1805AEAD005ED434 /* recreation.png */; };
+		18EBCC031805AEAD005ED434 /* sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBFB1805AEAD005ED434 /* sleep.png */; };
+		18EBCC041805AEAD005ED434 /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBFC1805AEAD005ED434 /* timer.png */; };
+		18EBCC061805B304005ED434 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCC051805B304005ED434 /* icon.png */; };
 		18F981131804361600FFE3A4 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F981121804361600FFE3A4 /* back.png */; };
-		18F98121180450EB00FFE3A4 /* TwoKeyButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F98120180450EB00FFE3A4 /* TwoKeyButton.xib */; };
 		18F981241804510D00FFE3A4 /* TwoKeyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F981231804510D00FFE3A4 /* TwoKeyButton.m */; };
-		18F981271804530C00FFE3A4 /* on1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F981251804530C00FFE3A4 /* on1.png */; };
-		18F981281804530C00FFE3A4 /* off1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F981261804530C00FFE3A4 /* off1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +67,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18C7AD881802BFEC00F62819 /* light_controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = light_controller.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C274AA18057A1E0051F64C /* four_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_down.png; sourceTree = "<group>"; };
+		18C274AB18057A1E0051F64C /* four_left_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_left_down.png; sourceTree = "<group>"; };
+		18C274AC18057A1E0051F64C /* four_left_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_left_up.png; sourceTree = "<group>"; };
+		18C274AD18057A1E0051F64C /* four_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_left.png; sourceTree = "<group>"; };
+		18C274AE18057A1E0051F64C /* four_right_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_right_down.png; sourceTree = "<group>"; };
+		18C274AF18057A1E0051F64C /* four_right_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_right_up.png; sourceTree = "<group>"; };
+		18C274B018057A1E0051F64C /* four_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_right.png; sourceTree = "<group>"; };
+		18C274B118057A1E0051F64C /* four_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_up.png; sourceTree = "<group>"; };
+		18C274B218057A1E0051F64C /* four.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four.png; sourceTree = "<group>"; };
+		18C274BC18057A4F0051F64C /* FourKeyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourKeyButton.h; sourceTree = "<group>"; };
+		18C274BD18057A4F0051F64C /* FourKeyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourKeyButton.m; sourceTree = "<group>"; };
+		18C7AD881802BFEC00F62819 /* 灯光中控.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "灯光中控.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C7AD8B1802BFEC00F62819 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18C7AD8D1802BFEC00F62819 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		18C7AD8F1802BFEC00F62819 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -70,12 +105,26 @@
 		18D79E5F1802FE7500644EC1 /* Page1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page1.m; sourceTree = "<group>"; };
 		18D79E68180301EC00644EC1 /* Page3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page3.h; sourceTree = "<group>"; };
 		18D79E69180301EC00644EC1 /* Page3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page3.m; sourceTree = "<group>"; };
+		18EBCBE51805A7FB005ED434 /* btn_off1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_off1.png; sourceTree = "<group>"; };
+		18EBCBE61805A7FB005ED434 /* btn_off2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_off2.png; sourceTree = "<group>"; };
+		18EBCBE71805A7FB005ED434 /* btn_off3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_off3.png; sourceTree = "<group>"; };
+		18EBCBE81805A7FB005ED434 /* btn_on1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_on1.png; sourceTree = "<group>"; };
+		18EBCBE91805A7FB005ED434 /* btn_on2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_on2.png; sourceTree = "<group>"; };
+		18EBCBEA1805A7FB005ED434 /* btn_on3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_on3.png; sourceTree = "<group>"; };
+		18EBCBF11805A886005ED434 /* btn_off4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_off4.png; sourceTree = "<group>"; };
+		18EBCBF21805A886005ED434 /* btn_on4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_on4.png; sourceTree = "<group>"; };
+		18EBCBF51805AEAD005ED434 /* alarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarm.png; sourceTree = "<group>"; };
+		18EBCBF61805AEAD005ED434 /* meeting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meeting.png; sourceTree = "<group>"; };
+		18EBCBF71805AEAD005ED434 /* mode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mode.png; sourceTree = "<group>"; };
+		18EBCBF81805AEAD005ED434 /* night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = night.png; sourceTree = "<group>"; };
+		18EBCBF91805AEAD005ED434 /* reading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reading.png; sourceTree = "<group>"; };
+		18EBCBFA1805AEAD005ED434 /* recreation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recreation.png; sourceTree = "<group>"; };
+		18EBCBFB1805AEAD005ED434 /* sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleep.png; sourceTree = "<group>"; };
+		18EBCBFC1805AEAD005ED434 /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
+		18EBCC051805B304005ED434 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		18F981121804361600FFE3A4 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		18F98120180450EB00FFE3A4 /* TwoKeyButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoKeyButton.xib; sourceTree = "<group>"; };
 		18F981221804510D00FFE3A4 /* TwoKeyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoKeyButton.h; sourceTree = "<group>"; };
 		18F981231804510D00FFE3A4 /* TwoKeyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoKeyButton.m; sourceTree = "<group>"; };
-		18F981251804530C00FFE3A4 /* on1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on1.png; sourceTree = "<group>"; };
-		18F981261804530C00FFE3A4 /* off1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +167,7 @@
 		18C7AD891802BFEC00F62819 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18C7AD881802BFEC00F62819 /* light_controller.app */,
+				18C7AD881802BFEC00F62819 /* 灯光中控.app */,
 				18C7ADA91802BFEC00F62819 /* light_controllerTests.xctest */,
 			);
 			name = Products;
@@ -196,8 +245,32 @@
 		18F981111804361600FFE3A4 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				18F981251804530C00FFE3A4 /* on1.png */,
-				18F981261804530C00FFE3A4 /* off1.png */,
+				18EBCC051805B304005ED434 /* icon.png */,
+				18EBCBF51805AEAD005ED434 /* alarm.png */,
+				18EBCBF61805AEAD005ED434 /* meeting.png */,
+				18EBCBF71805AEAD005ED434 /* mode.png */,
+				18EBCBF81805AEAD005ED434 /* night.png */,
+				18EBCBF91805AEAD005ED434 /* reading.png */,
+				18EBCBFA1805AEAD005ED434 /* recreation.png */,
+				18EBCBFB1805AEAD005ED434 /* sleep.png */,
+				18EBCBFC1805AEAD005ED434 /* timer.png */,
+				18EBCBF11805A886005ED434 /* btn_off4.png */,
+				18EBCBF21805A886005ED434 /* btn_on4.png */,
+				18EBCBE51805A7FB005ED434 /* btn_off1.png */,
+				18EBCBE61805A7FB005ED434 /* btn_off2.png */,
+				18EBCBE71805A7FB005ED434 /* btn_off3.png */,
+				18EBCBE81805A7FB005ED434 /* btn_on1.png */,
+				18EBCBE91805A7FB005ED434 /* btn_on2.png */,
+				18EBCBEA1805A7FB005ED434 /* btn_on3.png */,
+				18C274AA18057A1E0051F64C /* four_down.png */,
+				18C274AB18057A1E0051F64C /* four_left_down.png */,
+				18C274AC18057A1E0051F64C /* four_left_up.png */,
+				18C274AD18057A1E0051F64C /* four_left.png */,
+				18C274AE18057A1E0051F64C /* four_right_down.png */,
+				18C274AF18057A1E0051F64C /* four_right_up.png */,
+				18C274B018057A1E0051F64C /* four_right.png */,
+				18C274B118057A1E0051F64C /* four_up.png */,
+				18C274B218057A1E0051F64C /* four.png */,
 				18F981121804361600FFE3A4 /* back.png */,
 			);
 			path = images;
@@ -206,9 +279,10 @@
 		18F981141804409F00FFE3A4 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				18F98120180450EB00FFE3A4 /* TwoKeyButton.xib */,
 				18F981221804510D00FFE3A4 /* TwoKeyButton.h */,
 				18F981231804510D00FFE3A4 /* TwoKeyButton.m */,
+				18C274BC18057A4F0051F64C /* FourKeyButton.h */,
+				18C274BD18057A4F0051F64C /* FourKeyButton.m */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -230,7 +304,7 @@
 			);
 			name = light_controller;
 			productName = light_controller;
-			productReference = 18C7AD881802BFEC00F62819 /* light_controller.app */;
+			productReference = 18C7AD881802BFEC00F62819 /* 灯光中控.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18C7ADA81802BFEC00F62819 /* light_controllerTests */ = {
@@ -292,13 +366,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F981271804530C00FFE3A4 /* on1.png in Resources */,
+				18C274B318057A1E0051F64C /* four_down.png in Resources */,
+				18C274B618057A1E0051F64C /* four_left.png in Resources */,
+				18C274B418057A1E0051F64C /* four_left_down.png in Resources */,
+				18EBCC041805AEAD005ED434 /* timer.png in Resources */,
+				18C274B518057A1E0051F64C /* four_left_up.png in Resources */,
+				18EBCBFE1805AEAD005ED434 /* meeting.png in Resources */,
+				18C274B818057A1E0051F64C /* four_right_up.png in Resources */,
+				18EBCBF31805A886005ED434 /* btn_off4.png in Resources */,
 				18F981131804361600FFE3A4 /* back.png in Resources */,
+				18EBCBFF1805AEAD005ED434 /* mode.png in Resources */,
+				18C274B918057A1E0051F64C /* four_right.png in Resources */,
 				18C7ADA41802BFEC00F62819 /* Images.xcassets in Resources */,
+				18EBCBF01805A7FB005ED434 /* btn_on3.png in Resources */,
+				18C274B718057A1E0051F64C /* four_right_down.png in Resources */,
+				18EBCC001805AEAD005ED434 /* night.png in Resources */,
+				18EBCC011805AEAD005ED434 /* reading.png in Resources */,
+				18C274BA18057A1E0051F64C /* four_up.png in Resources */,
+				18EBCBF41805A886005ED434 /* btn_on4.png in Resources */,
+				18C274BB18057A1E0051F64C /* four.png in Resources */,
+				18EBCBEF1805A7FB005ED434 /* btn_on2.png in Resources */,
+				18EBCBFD1805AEAD005ED434 /* alarm.png in Resources */,
 				18C7AD961802BFEC00F62819 /* InfoPlist.strings in Resources */,
-				18F98121180450EB00FFE3A4 /* TwoKeyButton.xib in Resources */,
-				18F981281804530C00FFE3A4 /* off1.png in Resources */,
+				18EBCC031805AEAD005ED434 /* sleep.png in Resources */,
+				18EBCBEC1805A7FB005ED434 /* btn_off2.png in Resources */,
+				18EBCBEB1805A7FB005ED434 /* btn_off1.png in Resources */,
+				18EBCBED1805A7FB005ED434 /* btn_off3.png in Resources */,
+				18EBCC061805B304005ED434 /* icon.png in Resources */,
 				18C7AD9F1802BFEC00F62819 /* Main.storyboard in Resources */,
+				18EBCBEE1805A7FB005ED434 /* btn_on1.png in Resources */,
+				18EBCC021805AEAD005ED434 /* recreation.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +420,7 @@
 				18C7AD9C1802BFEC00F62819 /* AppDelegate.m in Sources */,
 				18C7AD981802BFEC00F62819 /* main.m in Sources */,
 				18C7ADCC1802CC7300F62819 /* Page2.m in Sources */,
+				18C274BE18057A4F0051F64C /* FourKeyButton.m in Sources */,
 				18D79E6A180301EC00644EC1 /* Page3.m in Sources */,
 				18C7ADC21802CA2500F62819 /* Constant.m in Sources */,
 			);
@@ -456,7 +554,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "light_controller/light_controller-Prefix.pch";
 				INFOPLIST_FILE = "light_controller/light_controller-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "灯光中控";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -473,7 +571,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "light_controller/light_controller-Prefix.pch";
 				INFOPLIST_FILE = "light_controller/light_controller-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "灯光中控";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

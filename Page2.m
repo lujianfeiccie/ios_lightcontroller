@@ -27,6 +27,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _twokeybtn1.delegate = self;
+    _twokeybtn2.delegate = self;
+    _twokeybtn3.delegate = self;
+    _twokeybtn4.delegate = self;
+    
     [_imageview setImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
 }
 
@@ -34,6 +39,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)onTwoKeyButtonClick:(NSInteger) btnID :(Boolean) enable{
+    NSLog(@"onTwoKeyButtonClick %@",[NSString stringWithFormat:@"btnID %i enable %i",btnID,enable]);
 }
 
 @end

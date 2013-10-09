@@ -28,6 +28,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _twokeybtn1.delegate = self;
+    _twokeybtn2.delegate = self;
+    _twokeybtn3.delegate = self;
+    _twokeybtn4.delegate = self;
+    _fourkeybtn.delegate = self;
     [_imageview setImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
 }
 
@@ -39,5 +43,18 @@
 
 -(void)onTwoKeyButtonClick:(NSInteger) btnID :(Boolean) enable{
     NSLog(@"onTwoKeyButtonClick %@",[NSString stringWithFormat:@"btnID %i enable %i",btnID,enable]);
+}
+
+-(void)onUpTouchDown:(Boolean) leftMode{
+    NSLog([NSString stringWithFormat:@"up touchDown %hhu",leftMode],Nil);
+}
+-(void)onUpTouchUp:(Boolean) leftMode{
+    NSLog([NSString stringWithFormat:@"up touchUp %hhu",leftMode],Nil);
+}
+-(void)onDownTouchDown:(Boolean) leftMode{
+    NSLog([NSString stringWithFormat:@"down touchDown %hhu",leftMode],Nil);
+}
+-(void)onDownTouchUp:(Boolean) leftMode{
+    NSLog([NSString stringWithFormat:@"down touchUp %hhu",leftMode],Nil);
 }
 @end
