@@ -32,6 +32,8 @@
     _twokeybtn3.delegate = self;
     _twokeybtn4.delegate = self;
     
+    _centerButton.delegate = self;
+    
     [_imageview setImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
 }
 
@@ -44,5 +46,10 @@
 -(void)onTwoKeyButtonClick:(NSInteger) btnID :(Boolean) enable{
     NSLog(@"onTwoKeyButtonClick %@",[NSString stringWithFormat:@"btnID %i enable %i",btnID,enable]);
 }
-
+-(void)onAngleReceive:(CGFloat) angle{
+    NSLog(@"angle receive %f",angle);
+}
+-(void)onCenterButtonClick:(Boolean) rgb_mode :(NSInteger) index{
+    NSLog(@"%hhu %i",rgb_mode,index);
+}
 @end

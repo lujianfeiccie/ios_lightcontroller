@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "18C7AD871802BFEC00F62819"
-               BuildableName = "light_controller.app"
+               BuildableName = "&#28783;&#20809;&#20013;&#25511;.app"
                BlueprintName = "light_controller"
                ReferencedContainer = "container:light_controller.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18C7AD871802BFEC00F62819"
-            BuildableName = "light_controller.app"
+            BuildableName = "&#28783;&#20809;&#20013;&#25511;.app"
             BlueprintName = "light_controller"
             ReferencedContainer = "container:light_controller.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18C7AD871802BFEC00F62819"
-            BuildableName = "light_controller.app"
+            BuildableName = "&#28783;&#20809;&#20013;&#25511;.app"
             BlueprintName = "light_controller"
             ReferencedContainer = "container:light_controller.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18C7AD871802BFEC00F62819"
-            BuildableName = "light_controller.app"
+            BuildableName = "&#28783;&#20809;&#20013;&#25511;.app"
             BlueprintName = "light_controller"
             ReferencedContainer = "container:light_controller.xcodeproj">
          </BuildableReference>

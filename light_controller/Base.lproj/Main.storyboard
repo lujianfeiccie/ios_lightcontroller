@@ -98,6 +98,16 @@
                                     <barButtonItem title="设置" id="SLv-W4-u0k"/>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFD-wZ-XzT">
+                                <rect key="frame" x="135" y="192" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="center_w.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="middleButtonClick:" destination="AaI-Yz-Fzo" eventType="touchUpInside" id="9kO-xI-GAi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -129,6 +139,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7l-XA-QKd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEW-NJ-HBJ" customClass="CircleButton">
+                                <rect key="frame" x="56" y="120" width="208" height="194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vBN-Lh-59x">
@@ -190,6 +204,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="centerButton" destination="dEW-NJ-HBJ" id="IaP-DC-SkA"/>
                         <outlet property="imageview" destination="L7l-XA-QKd" id="Olu-lz-J7T"/>
                         <outlet property="twokeybtn1" destination="Lmr-g3-qvq" id="lrN-wd-X5v"/>
                         <outlet property="twokeybtn2" destination="qJ1-Ma-fNm" id="tME-J3-9zE"/>
@@ -402,6 +417,7 @@
     </scenes>
     <resources>
         <image name="alarm.png" width="100" height="94"/>
+        <image name="center_w.png" width="184" height="184"/>
         <image name="meeting.png" width="100" height="95"/>
         <image name="mode.png" width="100" height="94"/>
         <image name="night.png" width="100" height="94"/>

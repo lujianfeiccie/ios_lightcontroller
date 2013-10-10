@@ -57,4 +57,7 @@
 -(void)onDownTouchUp:(Boolean) leftMode{
     NSLog([NSString stringWithFormat:@"down touchUp %hhu",leftMode],Nil);
 }
+- (IBAction)middleButtonClick:(id)sender {
+    NSLog(@"middleButtonClick");
+}
 @end

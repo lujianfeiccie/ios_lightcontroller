@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn2;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn3;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn4;
+- (IBAction)middleButtonClick:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet FourKeyButton *fourkeybtn;
 
