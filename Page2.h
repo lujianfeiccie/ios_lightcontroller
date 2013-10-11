@@ -19,5 +19,11 @@
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn3;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn4;
 @property (weak, nonatomic) IBOutlet CircleButton *centerButton;
+- (IBAction)onbtnClick:(id)sender;
+- (IBAction)offbtnClick:(id)sender;
+- (IBAction)brightUp:(id)sender;
+- (IBAction)brightDown:(id)sender;
+- (IBAction)settingbtnClick:(id)sender;
+
 
 @end

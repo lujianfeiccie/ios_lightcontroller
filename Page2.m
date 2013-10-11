@@ -8,6 +8,7 @@
 
 #import "Page2.h"
 #import "Constant.h"
+#import "AppDelegate.h"
 @interface Page2 ()
 
 @end
@@ -51,5 +52,22 @@
 }
 -(void)onCenterButtonClick:(Boolean) rgb_mode :(NSInteger) index{
     NSLog(@"%hhu %i",rgb_mode,index);
+}
+- (IBAction)onbtnClick:(id)sender {
+}
+
+- (IBAction)offbtnClick:(id)sender {
+}
+
+- (IBAction)brightUp:(id)sender {
+}
+
+- (IBAction)brightDown:(id)sender {
+}
+
+- (IBAction)settingbtnClick:(id)sender {
+    UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"pagesetting"];
+    AppDelegate *appDelegate=[[UIApplication sharedApplication] delegate];
+    [[appDelegate navController] pushViewController:next animated:YES];
 }
 @end

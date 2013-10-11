@@ -7,12 +7,22 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *rootView =  [storyBoard instantiateViewControllerWithIdentifier:@"rootview"];
+    self.navController = [[UINavigationController alloc] init];
+    [self.navController pushViewController:rootView animated:YES];
+    [self.navController setToolbarHidden:YES];//底部隐藏
+    [self.navController setNavigationBarHidden:YES];//顶部 隐藏
+    [self.window addSubview:self.navController.view];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							

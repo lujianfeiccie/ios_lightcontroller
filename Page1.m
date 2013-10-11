@@ -8,6 +8,7 @@
 
 #import "Page1.h"
 #import "Constant.h"
+#import "AppDelegate.h"
 @interface Page1 ()
 
 @end
@@ -60,4 +61,31 @@
 - (IBAction)middleButtonClick:(id)sender {
     NSLog(@"middleButtonClick");
 }
+
+- (IBAction)onbtnClick:(id)sender {
+}
+
+- (IBAction)offbtnClick:(id)sender {
+}
+
+- (IBAction)settingbtnClick:(id)sender {
+   // NSLog(@"settingclick");
+        // 获取故事板中某个View
+    UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"pagesetting"];
+    AppDelegate *appDelegate=[[UIApplication sharedApplication] delegate];
+    [[appDelegate navController] pushViewController:next animated:YES];
+
+}
+/*
+- (IBAction)settingbtnClick:(id)sender {
+    // 获取故事板
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    // 获取故事板中某个View
+    UIViewController *next = [board instantiateViewControllerWithIdentifier:@"pagesetting"];
+    
+    [self.navigationController pushViewController:next animated:YES];
+
+}*/
+
 @end

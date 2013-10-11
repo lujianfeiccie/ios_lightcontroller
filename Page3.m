@@ -8,6 +8,7 @@
 
 #import "Page3.h"
 #import "Constant.h"
+#import "AppDelegate.h"
 @interface Page3 ()
 
 @end
@@ -42,5 +43,16 @@
 }
 -(void)onTwoKeyButtonClick:(NSInteger) btnID :(Boolean) enable{
     NSLog(@"onTwoKeyButtonClick %@",[NSString stringWithFormat:@"btnID %i enable %i",btnID,enable]);
+}
+- (IBAction)onbtnClick:(id)sender {
+}
+
+- (IBAction)offbtnClick:(id)sender {
+}
+
+- (IBAction)settingbtnClick:(id)sender {
+    UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"pagesetting"];
+    AppDelegate *appDelegate=[[UIApplication sharedApplication] delegate];
+    [[appDelegate navController] pushViewController:next animated:YES];
 }
 @end
