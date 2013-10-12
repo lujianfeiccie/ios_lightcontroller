@@ -34,6 +34,7 @@
     _twokeybtn4.delegate = self;
     _fourkeybtn.delegate = self;
     [_imageview setImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
+    appDelegate=[[UIApplication sharedApplication] delegate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,6 +64,12 @@
 }
 
 - (IBAction)onbtnClick:(id)sender {
+    Byte s = 0x0b;
+    Byte byte[] = {0x0a,s};
+    NSInteger length = sizeof(byte) / sizeof(Byte);
+    NSLog(@"%i",length);
+    NSData *data = [[NSData alloc] initWithBytes:byte length:length];
+    [appDelegate write:data];
 }
 
 - (IBAction)offbtnClick:(id)sender {
@@ -72,7 +79,7 @@
    // NSLog(@"settingclick");
         // 获取故事板中某个View
     UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"pagesetting"];
-    AppDelegate *appDelegate=[[UIApplication sharedApplication] delegate];
+    
     [[appDelegate navController] pushViewController:next animated:YES];
 
 }

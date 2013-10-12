@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188655541809A47D00035915 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 188655531809A47D00035915 /* UserInfo.m */; };
 		18C274B318057A1E0051F64C /* four_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AA18057A1E0051F64C /* four_down.png */; };
 		18C274B418057A1E0051F64C /* four_left_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AB18057A1E0051F64C /* four_left_down.png */; };
 		18C274B518057A1E0051F64C /* four_left_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AC18057A1E0051F64C /* four_left_up.png */; };
@@ -41,6 +42,10 @@
 		18CF26EE1806FC4700F1053F /* center_r.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF26EA1806FC4700F1053F /* center_r.png */; };
 		18CF26EF1806FC4700F1053F /* center_rpg.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF26EB1806FC4700F1053F /* center_rpg.png */; };
 		18CF26F1180700DD00F1053F /* circle_back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CF26F0180700DD00F1053F /* circle_back2.png */; };
+		18CFBFAF18098C21001511D7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CFBFAE18098C21001511D7 /* CFNetwork.framework */; };
+		18CFBFB418099820001511D7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18CFBFB118099820001511D7 /* SVProgressHUD.bundle */; };
+		18CFBFB518099820001511D7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CFBFB318099820001511D7 /* SVProgressHUD.m */; };
+		18CFBFB818099CAD001511D7 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CFBFB718099CAD001511D7 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18D79E611802FE7500644EC1 /* Page1.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D79E5F1802FE7500644EC1 /* Page1.m */; };
 		18D79E6A180301EC00644EC1 /* Page3.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D79E69180301EC00644EC1 /* Page3.m */; };
 		18EBCBEB1805A7FB005ED434 /* btn_off1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBE51805A7FB005ED434 /* btn_off1.png */; };
@@ -82,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		188655521809A47D00035915 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		188655531809A47D00035915 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		18C274AA18057A1E0051F64C /* four_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_down.png; sourceTree = "<group>"; };
 		18C274AB18057A1E0051F64C /* four_left_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_left_down.png; sourceTree = "<group>"; };
 		18C274AC18057A1E0051F64C /* four_left_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_left_up.png; sourceTree = "<group>"; };
@@ -125,6 +132,12 @@
 		18CF26EA1806FC4700F1053F /* center_r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center_r.png; sourceTree = "<group>"; };
 		18CF26EB1806FC4700F1053F /* center_rpg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center_rpg.png; sourceTree = "<group>"; };
 		18CF26F0180700DD00F1053F /* circle_back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle_back2.png; sourceTree = "<group>"; };
+		18CFBFAE18098C21001511D7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		18CFBFB118099820001511D7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		18CFBFB218099820001511D7 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		18CFBFB318099820001511D7 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		18CFBFB618099CAD001511D7 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		18CFBFB718099CAD001511D7 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		18D79E5E1802FE7500644EC1 /* Page1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page1.h; sourceTree = "<group>"; };
 		18D79E5F1802FE7500644EC1 /* Page1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page1.m; sourceTree = "<group>"; };
 		18D79E68180301EC00644EC1 /* Page3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page3.h; sourceTree = "<group>"; };
@@ -165,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CFBFAF18098C21001511D7 /* CFNetwork.framework in Frameworks */,
 				18FC7296180857100027B05E /* libicucore.dylib in Frameworks */,
 				18C7AD8E1802BFEC00F62819 /* CoreGraphics.framework in Frameworks */,
 				18C7AD901802BFEC00F62819 /* UIKit.framework in Frameworks */,
@@ -188,6 +202,8 @@
 		18C7AD7F1802BFEB00F62819 = {
 			isa = PBXGroup;
 			children = (
+				18CFBFB018099820001511D7 /* SVProgressHUD */,
+				18CFBFA718098C00001511D7 /* AsyncSocket */,
 				18FC729B1808578B0027B05E /* RegexKitLite */,
 				18F981141804409F00FFE3A4 /* Custom */,
 				18F981111804361600FFE3A4 /* images */,
@@ -211,6 +227,7 @@
 		18C7AD8A1802BFEC00F62819 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18CFBFAE18098C21001511D7 /* CFNetwork.framework */,
 				18FC7295180857100027B05E /* libicucore.dylib */,
 				18C7AD8B1802BFEC00F62819 /* Foundation.framework */,
 				18C7AD8D1802BFEC00F62819 /* CoreGraphics.framework */,
@@ -280,6 +297,25 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
+		18CFBFA718098C00001511D7 /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				18CFBFB618099CAD001511D7 /* AsyncSocket.h */,
+				18CFBFB718099CAD001511D7 /* AsyncSocket.m */,
+			);
+			path = AsyncSocket;
+			sourceTree = "<group>";
+		};
+		18CFBFB018099820001511D7 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				18CFBFB118099820001511D7 /* SVProgressHUD.bundle */,
+				18CFBFB218099820001511D7 /* SVProgressHUD.h */,
+				18CFBFB318099820001511D7 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		18F981111804361600FFE3A4 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +370,8 @@
 				18C274BD18057A4F0051F64C /* FourKeyButton.m */,
 				18CF26E31806DDF400F1053F /* CircleButton.h */,
 				18CF26E41806DDF400F1053F /* CircleButton.m */,
+				188655521809A47D00035915 /* UserInfo.h */,
+				188655531809A47D00035915 /* UserInfo.m */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -433,6 +471,7 @@
 				18EBCC041805AEAD005ED434 /* timer.png in Resources */,
 				18C274B518057A1E0051F64C /* four_left_up.png in Resources */,
 				18EBCBFE1805AEAD005ED434 /* meeting.png in Resources */,
+				18CFBFB418099820001511D7 /* SVProgressHUD.bundle in Resources */,
 				18C274B818057A1E0051F64C /* four_right_up.png in Resources */,
 				18CF26EF1806FC4700F1053F /* center_rpg.png in Resources */,
 				18EBCBF31805A886005ED434 /* btn_off4.png in Resources */,
@@ -487,6 +526,7 @@
 			files = (
 				18F981241804510D00FFE3A4 /* TwoKeyButton.m in Sources */,
 				18D79E611802FE7500644EC1 /* Page1.m in Sources */,
+				18CFBFB518099820001511D7 /* SVProgressHUD.m in Sources */,
 				18C7ADA21802BFEC00F62819 /* ViewController.m in Sources */,
 				18CF26E51806DDF400F1053F /* CircleButton.m in Sources */,
 				18FC72941808440D0027B05E /* PageSetting.m in Sources */,
@@ -497,6 +537,8 @@
 				18C274BE18057A4F0051F64C /* FourKeyButton.m in Sources */,
 				18D79E6A180301EC00644EC1 /* Page3.m in Sources */,
 				18C7ADC21802CA2500F62819 /* Constant.m in Sources */,
+				188655541809A47D00035915 /* UserInfo.m in Sources */,
+				18CFBFB818099CAD001511D7 /* AsyncSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

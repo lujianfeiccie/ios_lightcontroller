@@ -8,6 +8,8 @@
 
 #import "PageSetting.h"
 #import "RegexKitLite.h"
+#import "SVProgressHUD.h"
+#import "UserInfo.h"
 @interface PageSetting ()
 
 @end
@@ -27,6 +29,22 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    appDelegate =[[UIApplication sharedApplication] delegate];
+    
+
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];//读取用户信息
+    NSData* udObject = [ud objectForKey:@"UserInfo"];
+    UserInfo* mUserInfo = [NSKeyedUnarchiver unarchiveObjectWithData:udObject] ;
+    if(mUserInfo!=Nil){
+        _txtIP.text = mUserInfo._ip;
+        _txtPort.text = mUserInfo._port;
+    }
+    
+    if([appDelegate isConnecting]){
+        [self UpdateUI_forConnect];
+        return;
+    }
+    [self UpdateUI_forDisconnect];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,17 +57,63 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)UpdateUI_forConnect{
+    [_txtIP setEnabled:NO];
+    [_txtPort setEnabled:NO];
+    [_connectbtn setTitle:@"断开"];
+}
+- (void)UpdateUI_forDisconnect{
+    [_txtIP setEnabled:YES];
+    [_txtPort setEnabled:YES];
+    [_connectbtn setTitle:@"连接"];
+}
 - (IBAction)connectbtnClick:(id)sender {
-    //组装一个字符串，把里面的网址解析出来
-  NSString * username = @"192.168.1.256";
-    NSString *pattern = @"\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b";
-    //下面的代码一样的效果
+    if([appDelegate isConnecting]){
+        [appDelegate Disconnect];
+        [SVProgressHUD showSuccessWithStatus:@"断开成功"];
+        [self UpdateUI_forDisconnect];
+        return;
+    }
+    NSString *serverIp = _txtIP.text;
+    NSString *serverPort = _txtPort.text;
     
-    if([username isMatchedByRegex:pattern]){
-        
+    if([serverIp isEqualToString:@""] || [serverPort isEqualToString:@""]){
+        UIAlertView* alertdlg = [[UIAlertView alloc]initWithTitle:@"提示" message:@"IP或端口不能为空!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertdlg show];
+        alertdlg = nil;
+        return;
+    }
+    
+    NSString *regexIp = @"((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)";
+    NSString *regexPort = @"^[0-9]+$";
+    
+    if([serverIp isMatchedByRegex:regexIp] &&
+       [serverPort isMatchedByRegex:regexPort]){
         NSLog(@"Matched");
+        
+       Boolean result = [appDelegate Connect:serverIp :[serverPort intValue]];
+        if (result) {
+            NSLog(@"连接成功");
+            [SVProgressHUD showSuccessWithStatus:@"连接成功"];
+            
+            UserInfo* mUserInfo = [[UserInfo alloc] init]; //保存用户信息
+            mUserInfo._ip =serverIp;
+            mUserInfo._port = serverPort;
+            NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+            NSData *udObject = [NSKeyedArchiver archivedDataWithRootObject:mUserInfo];
+            [ud setObject:udObject forKey:@"UserInfo"];
+            
+             [self.navigationController popViewControllerAnimated:YES];//返回主界面
+        }else{
+            NSLog(@"连接失败");
+            [SVProgressHUD showErrorWithStatus:@"连接失败"];
+        }
+        
     }else{
         NSLog(@"Not matched");
+        UIAlertView* alertdlg = [[UIAlertView alloc]initWithTitle:@"提示" message:@"非法输入，请重来!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertdlg show];
+        alertdlg = nil;
     }
 }
 @end
