@@ -10,6 +10,7 @@
 #import "ViewController.h"
 @implementation AppDelegate
 @synthesize isConnecting;
+@synthesize delegate;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -36,13 +37,17 @@
 }
 - (Boolean)Connect:(NSString*) serverIp :(NSUInteger) port{
     NSError *err = nil;
-    if([asyncSocket connectToHost:serverIp onPort:port error:&err]){
-        isConnecting = YES;
-        return YES;
+    Boolean result;
+    @try {
+         result = [asyncSocket connectToHost:serverIp onPort:port error:&err];
     }
-    NSLog(@"Error: %@", err);
-    isConnecting = NO;
-    return NO;
+    @catch (NSException *exception) {
+       NSLog(@"exception:%@ err:%@",exception,err); 
+    }
+    @finally {
+        
+    }
+    return result;
 }
 - (void)Disconnect{
     [asyncSocket disconnect];
@@ -83,6 +88,10 @@
  **/
 - (void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err{
     [self log:@"willDisconnectWithError" ];
+    isConnecting = NO;
+    if(delegate!=nil){
+        [delegate onConnectFailed];
+    }
 }
 
 /**
@@ -95,6 +104,9 @@
 - (void)onSocketDidDisconnect:(AsyncSocket *)sock{
     [self log:@"onSocketDidDisconnect" ];
     isConnecting = NO;
+    if(delegate!=Nil){
+        [delegate onDisconnect];
+    }
 }
 
 /**
@@ -120,6 +132,11 @@
  **/
 - (BOOL)onSocketWillConnect:(AsyncSocket *)sock{
     [self log:@"onSocketWillConnect" ];
+    isConnecting = NO;
+    if(delegate!=nil){
+        [delegate onConnectFailed];
+    }
+
     return YES;
 }
 
@@ -129,7 +146,10 @@
  **/
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port{
     [self log:@"didConnectToHost" ];
-    isConnecting = YES;
+        isConnecting = YES;
+    if(delegate!=nil){
+        [delegate onConnectSuccessfully];
+    }
 }
 
 /**

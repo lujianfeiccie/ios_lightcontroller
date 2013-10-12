@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-@interface PageSetting : UIViewController{
+@interface PageSetting : UIViewController<MyAsyncSocketDelegate>{
     AppDelegate *appDelegate;
 }
 - (IBAction)backbtnClick:(id)sender;

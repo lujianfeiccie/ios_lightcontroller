@@ -30,7 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     appDelegate =[[UIApplication sharedApplication] delegate];
-    
+    appDelegate.delegate=self;
 
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];//读取用户信息
     NSData* udObject = [ud objectForKey:@"UserInfo"];
@@ -70,8 +70,6 @@
 - (IBAction)connectbtnClick:(id)sender {
     if([appDelegate isConnecting]){
         [appDelegate Disconnect];
-        [SVProgressHUD showSuccessWithStatus:@"断开成功"];
-        [self UpdateUI_forDisconnect];
         return;
     }
     NSString *serverIp = _txtIP.text;
@@ -92,22 +90,7 @@
         NSLog(@"Matched");
         
        Boolean result = [appDelegate Connect:serverIp :[serverPort intValue]];
-        if (result) {
-            NSLog(@"连接成功");
-            [SVProgressHUD showSuccessWithStatus:@"连接成功"];
-            
-            UserInfo* mUserInfo = [[UserInfo alloc] init]; //保存用户信息
-            mUserInfo._ip =serverIp;
-            mUserInfo._port = serverPort;
-            NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-            NSData *udObject = [NSKeyedArchiver archivedDataWithRootObject:mUserInfo];
-            [ud setObject:udObject forKey:@"UserInfo"];
-            
-             [self.navigationController popViewControllerAnimated:YES];//返回主界面
-        }else{
-            NSLog(@"连接失败");
-            [SVProgressHUD showErrorWithStatus:@"连接失败"];
-        }
+        
         
     }else{
         NSLog(@"Not matched");
@@ -115,5 +98,30 @@
         [alertdlg show];
         alertdlg = nil;
     }
+}
+-(void)onConnectSuccessfully{
+    NSLog(@"连接成功");
+    NSString *serverIp = _txtIP.text;
+    NSString *serverPort = _txtPort.text;
+
+    
+    [SVProgressHUD showSuccessWithStatus:@"连接成功"];
+    
+    UserInfo* mUserInfo = [[UserInfo alloc] init]; //保存用户信息
+    mUserInfo._ip =serverIp;
+    mUserInfo._port = serverPort;
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSData *udObject = [NSKeyedArchiver archivedDataWithRootObject:mUserInfo];
+    [ud setObject:udObject forKey:@"UserInfo"];
+    
+    [self.navigationController popViewControllerAnimated:YES];//返回主界面
+}
+-(void)onConnectFailed{
+    NSLog(@"连接失败");
+    [SVProgressHUD showErrorWithStatus:@"连接失败"];
+}
+-(void)onDisconnect{
+    [SVProgressHUD showSuccessWithStatus:@"断开成功"];
+    [self UpdateUI_forDisconnect];
 }
 @end
