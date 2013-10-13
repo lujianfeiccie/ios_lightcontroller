@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "TwoKeyButton.h"
 #import "CircleButton.h"
+#import "AppDelegate.h"
 @interface Page2 : UIViewController<TwoKeyButtonDelegate,CircleButtonDelegate>
 {
-    
+    AppDelegate *mApp;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn1;

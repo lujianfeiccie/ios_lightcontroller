@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef NS_ENUM(NSInteger, RGBIndex) {
+    //以下是枚举成员
+    R = 0,
+    G = 1,
+    B = 2
+};
 //接口定义
 @protocol CircleButtonDelegate <NSObject>
 @required
 -(void)onAngleReceive:(CGFloat) angle;
--(void)onCenterButtonClick:(Boolean) rgb_mode :(NSInteger) index;
+-(void)onCenterButtonClick:(Boolean) rgb_mode :(RGBIndex) index;
 @end
 @interface CircleButton : UIImageView
 {

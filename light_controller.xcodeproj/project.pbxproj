@@ -48,6 +48,7 @@
 		18CFBFB818099CAD001511D7 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CFBFB718099CAD001511D7 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18D79E611802FE7500644EC1 /* Page1.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D79E5F1802FE7500644EC1 /* Page1.m */; };
 		18D79E6A180301EC00644EC1 /* Page3.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D79E69180301EC00644EC1 /* Page3.m */; };
+		18D9F71F180A33AF009B0CF0 /* Protocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D9F71E180A33AF009B0CF0 /* Protocol.m */; };
 		18EBCBEB1805A7FB005ED434 /* btn_off1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBE51805A7FB005ED434 /* btn_off1.png */; };
 		18EBCBEC1805A7FB005ED434 /* btn_off2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBE61805A7FB005ED434 /* btn_off2.png */; };
 		18EBCBED1805A7FB005ED434 /* btn_off3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCBE71805A7FB005ED434 /* btn_off3.png */; };
@@ -142,6 +143,8 @@
 		18D79E5F1802FE7500644EC1 /* Page1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page1.m; sourceTree = "<group>"; };
 		18D79E68180301EC00644EC1 /* Page3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page3.h; sourceTree = "<group>"; };
 		18D79E69180301EC00644EC1 /* Page3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page3.m; sourceTree = "<group>"; };
+		18D9F71D180A33AF009B0CF0 /* Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Protocol.h; sourceTree = "<group>"; };
+		18D9F71E180A33AF009B0CF0 /* Protocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Protocol.m; sourceTree = "<group>"; };
 		18EBCBE51805A7FB005ED434 /* btn_off1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_off1.png; sourceTree = "<group>"; };
 		18EBCBE61805A7FB005ED434 /* btn_off2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_off2.png; sourceTree = "<group>"; };
 		18EBCBE71805A7FB005ED434 /* btn_off3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_off3.png; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 				18C7AD921802BFEC00F62819 /* Supporting Files */,
 				18C7ADC01802CA2500F62819 /* Constant.h */,
 				18C7ADC11802CA2500F62819 /* Constant.m */,
+				18D9F71D180A33AF009B0CF0 /* Protocol.h */,
+				18D9F71E180A33AF009B0CF0 /* Protocol.m */,
 			);
 			path = light_controller;
 			sourceTree = "<group>";
@@ -531,6 +536,7 @@
 				18CF26E51806DDF400F1053F /* CircleButton.m in Sources */,
 				18FC72941808440D0027B05E /* PageSetting.m in Sources */,
 				18C7AD9C1802BFEC00F62819 /* AppDelegate.m in Sources */,
+				18D9F71F180A33AF009B0CF0 /* Protocol.m in Sources */,
 				18FC729E1808578B0027B05E /* RegexKitLite.m in Sources */,
 				18C7AD981802BFEC00F62819 /* main.m in Sources */,
 				18C7ADCC1802CC7300F62819 /* Page2.m in Sources */,

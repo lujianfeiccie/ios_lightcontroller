@@ -89,8 +89,7 @@
        [serverPort isMatchedByRegex:regexPort]){
         NSLog(@"Matched");
         
-       Boolean result = [appDelegate Connect:serverIp :[serverPort intValue]];
-        
+       [appDelegate Connect:serverIp :[serverPort intValue]];
         
     }else{
         NSLog(@"Not matched");

@@ -88,7 +88,18 @@
         }else{
             rgb_mode = NO;
         }
-        [_delegate onCenterButtonClick:rgb_mode :center_button_index ];
+        switch (center_button_index) {
+            case 1:
+                [_delegate onCenterButtonClick:rgb_mode :R ];
+                break;
+            case 2:
+                [_delegate onCenterButtonClick:rgb_mode :G ];
+            case 3:
+                [_delegate onCenterButtonClick:rgb_mode :B ];
+            default:
+                break;
+        }
+        
         [self setCenterButtonBG:[center_button_Array objectAtIndex:center_button_index]];
     }else if(sender.numberOfTapsRequired == 2){
     }
@@ -104,7 +115,9 @@
 */
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
+    if(rgb_mode == NO){
+        return;
+    }
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint point = [touch locationInView:self];
     CGFloat x = point.x;

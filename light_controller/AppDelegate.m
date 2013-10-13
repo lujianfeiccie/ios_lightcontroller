@@ -8,11 +8,14 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "UserInfo.h"
 @implementation AppDelegate
 @synthesize isConnecting;
 @synthesize delegate;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self log:@"didFinishLaunchingWithOptions" ];
+
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -27,12 +30,14 @@
     
     asyncSocket = [[AsyncSocket alloc] initWithDelegate:self];
     isConnecting = NO;
-    NSLog(@"didFinishLaunchingWithOptions");
+    isConnectedWithError = NO;
     return YES;
 }
-- (void)write:(NSData*) data{
+- (void)write :(Byte*) data Size:(NSInteger) size{
     if(isConnecting==YES){
-        [asyncSocket writeData:data withTimeout:1 tag:1];
+       // [self log:[NSString stringWithFormat:@"length:%i",length]];
+        NSData *nsdata = [[NSData alloc] initWithBytes:data length:size];
+        [asyncSocket writeData:nsdata withTimeout:1 tag:1];
     };
 }
 - (Boolean)Connect:(NSString*) serverIp :(NSUInteger) port{
@@ -50,34 +55,47 @@
     return result;
 }
 - (void)Disconnect{
+    isConnectedWithError = NO;
     [asyncSocket disconnect];
 }
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    [self log:@"applicationWillResignActive"];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self log:@"applicationDidEnterBackground"];
+    [self Disconnect];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [self log:@"applicationWillEnterForeground"];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self log:@"applicationDidBecomeActive"];
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];//读取用户信息
+    NSData* udObject = [ud objectForKey:@"UserInfo"];
+    UserInfo* mUserInfo = [NSKeyedUnarchiver unarchiveObjectWithData:udObject] ;
+    if(mUserInfo!=Nil){
+        [self Connect:mUserInfo._ip :[mUserInfo._port intValue]];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    
+    [self log:@"applicationWillTerminate"];
+
 }
 
 /**
@@ -89,6 +107,7 @@
 - (void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err{
     [self log:@"willDisconnectWithError" ];
     isConnecting = NO;
+    isConnectedWithError = YES;
     if(delegate!=nil){
         [delegate onConnectFailed];
     }
@@ -104,6 +123,9 @@
 - (void)onSocketDidDisconnect:(AsyncSocket *)sock{
     [self log:@"onSocketDidDisconnect" ];
     isConnecting = NO;
+    if(isConnectedWithError == YES){
+        return;
+    }
     if(delegate!=Nil){
         [delegate onDisconnect];
     }
@@ -132,10 +154,6 @@
  **/
 - (BOOL)onSocketWillConnect:(AsyncSocket *)sock{
     [self log:@"onSocketWillConnect" ];
-    isConnecting = NO;
-    if(delegate!=nil){
-        [delegate onConnectFailed];
-    }
 
     return YES;
 }
@@ -199,5 +217,72 @@
 }
 - (void) log:(NSString*) msg{
     NSLog([NSString stringWithFormat:@"AppDelegate-%@",msg],Nil);
+}
+- (void)control_toggle:(Byte) FLAG_UI LightNo:(NSInteger) lightNo LightState:(Boolean) lightState{
+        Byte data[]={
+            FLAG_HEADER,
+            FLAG_UI,
+            FLAG_FUNCTION_ONOFF,
+            lightNo,
+            (lightState==YES?FLAG_FUNCTION_ONOFF_ON:FLAG_FUNCTION_ONOFF_OFF),
+            FLAG_TAIL
+        };
+    int length = sizeof(data)/sizeof(Byte);
+    [self write:data Size:length];
+}
+- (void)control_cool_or_warm_down:(Byte) status_increase IsCool:(Boolean) isCool{
+    Byte data[] = {
+     FLAG_HEADER,
+     FLAG_UI_COLOR,
+    (isCool==YES?FLAG_FUNCTION_COOL_DARK:FLAG_FUNCTION_WARM_DARK),
+     0,
+    status_increase,
+    FLAG_TAIL};
+    int length = sizeof(data)/sizeof(Byte);
+    [self write:data Size:length];
+}
+- (void)control_cool_or_warm_up:(Byte) status_increase IsCool:(Boolean) isCool{
+    Byte data[] = {
+        FLAG_HEADER,
+        FLAG_UI_COLOR,
+        (isCool==YES?FLAG_FUNCTION_COOL_BRIGHT:FLAG_FUNCTION_WARM_BRIGHT),
+        0,
+        status_increase,
+        FLAG_TAIL};
+    int length = sizeof(data)/sizeof(Byte);
+    [self write:data Size:length];
+}
+- (void)control_mode:(Byte) mode{
+    Byte data[] = {
+        FLAG_HEADER,
+        FLAG_UI_MODE,
+        mode,
+        00,
+        00,
+        FLAG_TAIL};
+    int length = sizeof(data)/sizeof(Byte);
+    [self write:data Size:length];
+}
+- (void)control_bright_dark:(Byte) status{
+    Byte data[] = {
+        FLAG_HEADER,
+        FLAG_UI_RGB,
+        FLAG_FUNCTION_BRIGHTDARK,
+        0,
+        status,
+        FLAG_TAIL};
+    int length = sizeof(data)/sizeof(Byte);
+    [self write:data Size:length];
+}
+- (void)control_rgb:(Byte) colorValue{
+    Byte data[] = {
+        FLAG_HEADER,
+        FLAG_UI_RGB,
+        FLAG_FUNCTION_COLOR,
+        0,
+        colorValue,
+        FLAG_TAIL};
+    int length = sizeof(data)/sizeof(Byte);
+    [self write:data Size:length];
 }
 @end
