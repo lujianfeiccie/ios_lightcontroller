@@ -49,7 +49,7 @@
     [self setCenterButtonBG: IMAGE_RGB];
     NSInteger center_width = 50,center_height = 50;//中间按钮大小
     NSInteger center_x = radius - center_width/2;
-    NSInteger center_y = radius - center_height/1.5+4;
+    NSInteger center_y = radius - center_height/2;
     [center_button setFrame:CGRectMake(center_x, center_y, center_width, center_height)];
     [center_button setUserInteractionEnabled:YES];
     UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -57,6 +57,8 @@
     [center_button addGestureRecognizer:singleFingerOne];
     [self addSubview:center_button];
     [self addSubview:small_circle];
+    
+     mApp=[[UIApplication sharedApplication] delegate];//用于通知主界面禁用/恢复手势
     return self;
 }
 - (void) setCenterButtonBG:(NSString*) imageName{
@@ -67,7 +69,8 @@
 {
     Boolean result = NO;
     CGFloat distance = [ self getDistance:x : y];
-    if(distance < radius && distance > radius/2){
+    
+    if(distance < radius-5 && distance > radius/2){
         result = YES;
     }
     return result;
@@ -75,6 +78,7 @@
 //处理单指事件
 - (void)handleSingleFingerEvent:(UITapGestureRecognizer *)sender
 {
+    
     if(_delegate == nil){
         return;
     }
@@ -115,13 +119,20 @@
 */
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if(rgb_mode == NO){
-        return;
-    }
+    [mApp notifyToEnableScrollPage:NO];
+    
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint point = [touch locationInView:self];
     CGFloat x = point.x;
     CGFloat y = point.y;
+    
+    [small_circle setFrame:CGRectMake(x,y, 10, 10)];
+    
+    
+    if(rgb_mode == NO){
+        return;
+    }
+    
     //NSLog(@"x:%f,y:%f",x,y);
     if(_delegate == Nil){
         return;
@@ -133,8 +144,6 @@
     /*if(delegate==Nil){
         return;
     }*/
-    
-    [small_circle setFrame:CGRectMake(x,y, 10, 10)];
     
     if(x-center.x == 0){
         if(y-center.y < 0){
@@ -198,6 +207,10 @@
         }
     }
     // NSLog(@"touchesBegan");
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [mApp notifyToEnableScrollPage:YES];
 }
 -(CGFloat) getAngle: (CGFloat) radian{
     CGFloat result = 0.0f;

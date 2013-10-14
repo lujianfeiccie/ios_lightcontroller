@@ -24,6 +24,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self buildLayout];
+    mApp=[[UIApplication sharedApplication] delegate];
+    mApp.delegateForScrollPage = self;
 }
 -(void)buildLayout
 {
@@ -99,6 +101,10 @@
 
     NSInteger width = self.view.bounds.size.width;
     [_m_sc setContentOffset:CGPointMake(index * width, 0) animated:YES];
+}
+-(void)onPageScrollEnable: (Boolean) enable{
+    _m_sc.pagingEnabled =enable;  //是否翻页
+    _m_sc.scrollEnabled =enable;  //是否可滚动
 }
 #pragma mark
 #pragma mark UIScrollViewDelegate method

@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface ViewController : UIViewController<UIScrollViewDelegate>
-
+#import "AppDelegate.h"
+@interface ViewController : UIViewController<UIScrollViewDelegate,MyScrollPageDelegate>
+{
+    AppDelegate *mApp;
+}
 @end

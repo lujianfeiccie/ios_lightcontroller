@@ -12,6 +12,7 @@
 @implementation AppDelegate
 @synthesize isConnecting;
 @synthesize delegate;
+@synthesize delegateForScrollPage;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self log:@"didFinishLaunchingWithOptions" ];
@@ -31,6 +32,8 @@
     asyncSocket = [[AsyncSocket alloc] initWithDelegate:self];
     isConnecting = NO;
     isConnectedWithError = NO;
+    
+    
     return YES;
 }
 - (void)write :(Byte*) data Size:(NSInteger) size{
@@ -284,5 +287,10 @@
         FLAG_TAIL};
     int length = sizeof(data)/sizeof(Byte);
     [self write:data Size:length];
+}
+- (void)notifyToEnableScrollPage: (Boolean) enable{
+    if(delegateForScrollPage!=Nil){
+        [delegateForScrollPage onPageScrollEnable:enable];
+    }
 }
 @end

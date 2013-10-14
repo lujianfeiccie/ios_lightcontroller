@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AppDelegate.h"
 //接口定义
 @protocol FourKeyButtonDelegate <NSObject>
 @required
@@ -23,6 +23,7 @@
     NSInteger radius;
     CGPoint center;
     Boolean leftMode;
+    UIImageView* center_button;
     //图片
     NSString* IMAGE_UP;
     NSString* IMAGE_DOWN;
@@ -34,6 +35,7 @@
     NSString* IMAGE_RIGHT_DOWN;
     
     id<FourKeyButtonDelegate> delegate;
+      AppDelegate *mApp;
 }
 @property Boolean leftMode;
 @property(nonatomic,retain) id<FourKeyButtonDelegate> delegate;

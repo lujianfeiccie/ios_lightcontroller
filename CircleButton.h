@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 typedef NS_ENUM(NSInteger, RGBIndex) {
     //以下是枚举成员
     R = 0,
@@ -34,6 +35,7 @@ typedef NS_ENUM(NSInteger, RGBIndex) {
     NSArray *center_button_Array;
     Boolean rgb_mode;
     NSInteger center_button_index;
+     AppDelegate *mApp;
 }
 @property id<CircleButtonDelegate> delegate;
 @end

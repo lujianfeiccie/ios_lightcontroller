@@ -34,6 +34,15 @@
     //得出半径
     radius = width / 2;
     
+    center_button = [[UIImageView alloc]init];//中间按钮
+   [center_button setImage:[UIImage imageNamed:@"center_w.png" ]];
+    NSInteger center_width = 50,center_height = 50;//中间按钮大小
+    NSInteger center_x = radius - center_width/2;
+    NSInteger center_y = radius - center_height/2;
+    [center_button setFrame:CGRectMake(center_x, center_y, center_width, center_height)];
+    [center_button setUserInteractionEnabled:YES];
+    [self addSubview:center_button];
+    
     //得到中心点
     center =CGPointMake(radius, radius);
     
@@ -45,6 +54,8 @@
     IMAGE_LEFT_DOWN = @"four_left_down.png";
     IMAGE_RIGHT_UP = @"four_right_up.png";
     IMAGE_RIGHT_DOWN = @"four_right_down.png";
+    
+    mApp=[[UIApplication sharedApplication] delegate];//用于通知主界面禁用/恢复手势
     return self;
 }
 - (void) setBgImage: (NSString*) imageName
@@ -59,7 +70,7 @@
     CGFloat x = point.x;
     CGFloat y = point.y;
     //NSLog(@"x:%f,y:%f",x,y);
-    
+    [mApp notifyToEnableScrollPage:NO];
     if([self isInRange:x:y] == NO){
         return;
     }
@@ -107,6 +118,8 @@
     CGFloat x = point.x;
     CGFloat y = point.y;
     //NSLog(@"x:%f,y:%f",x,y);
+    
+    [mApp notifyToEnableScrollPage:YES];
     
     if([self isInRange:x:y] == NO){
         return;
