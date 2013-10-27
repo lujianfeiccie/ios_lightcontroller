@@ -10,14 +10,17 @@
 #import "TwoKeyButton.h"
 #import "FourKeyButton.h"
 #import "AppDelegate.h"
-@interface Page1 : UIViewController<TwoKeyButtonDelegate,FourKeyButtonDelegate>{
+
+
+@interface Page1 : UIViewController<TwoKeyButtonDelegate,FourKeyButtonDelegate
+,MyViewDidAppearDelegate>{
     AppDelegate *mApp;
 }
-@property (weak, nonatomic) IBOutlet UIImageView *imageview;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn1;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn2;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn3;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn4;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 - (IBAction)middleButtonClick:(id)sender;
 - (IBAction)onbtnClick:(id)sender;
 - (IBAction)offbtnClick:(id)sender;

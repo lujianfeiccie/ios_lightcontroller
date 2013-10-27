@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AsyncSocket.h"
 #import "Protocol.h"
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 //接口定义
 @protocol MyAsyncSocketDelegate <NSObject>
 @required
@@ -20,6 +21,9 @@
 @required
 -(void)onPageScrollEnable: (Boolean) enable;
 @end
+@protocol MyViewDidAppearDelegate <NSObject>
+-(void) onMyViewDidAppear;
+@end
 @interface AppDelegate : UIResponder <UIApplicationDelegate,AsyncSocketDelegate>
 {
     AsyncSocket *asyncSocket;
@@ -27,12 +31,16 @@
     id<MyAsyncSocketDelegate> delegate;
     Boolean isConnectedWithError;
     id<MyScrollPageDelegate> delegateForScrollPage;
+    UIStoryboard *storyBoard;
+    NSMutableArray* delegateList;
 }
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navController;
 @property id<MyAsyncSocketDelegate> delegate;
 @property id<MyScrollPageDelegate> delegateForScrollPage;
 @property Boolean isConnecting;
+@property (strong, nonatomic) UIStoryboard *storyBoard;
+@property id<MyViewDidAppearDelegate> delegateForViewDidAppear;
 - (Boolean)Connect:(NSString*) serverIp :(NSUInteger) port;
 - (void)Disconnect;
 - (void)write :(Byte*) data Size:(NSInteger) size;
@@ -43,4 +51,7 @@
 - (void)control_bright_dark:(Byte) status;
 - (void)control_rgb:(Byte) colorValue;
 - (void)notifyToEnableScrollPage: (Boolean) enable;
+- (void)addDelegateForViewDidAppear:(id<MyViewDidAppearDelegate>)delegateForViewDidAppear;
+- (void)removeDelegateForViewDidAppear:(id<MyViewDidAppearDelegate>)delegateForViewDidAppear;
+- (void)notifyToViewDidAppear;
 @end

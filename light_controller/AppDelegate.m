@@ -13,14 +13,21 @@
 @synthesize isConnecting;
 @synthesize delegate;
 @synthesize delegateForScrollPage;
+@synthesize storyBoard;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self log:@"didFinishLaunchingWithOptions" ];
 
+    delegateList = [[NSMutableArray alloc] init];
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UIStoryboard *storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    if(iPhone5){
+        storyBoard=[UIStoryboard storyboardWithName:@"MainiPhone5" bundle:nil];
+    }else{
+        storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    }
+  
     ViewController *rootView =  [storyBoard instantiateViewControllerWithIdentifier:@"rootview"];
     self.navController = [[UINavigationController alloc] init];
     [self.navController pushViewController:rootView animated:YES];
@@ -291,6 +298,17 @@
 - (void)notifyToEnableScrollPage: (Boolean) enable{
     if(delegateForScrollPage!=Nil){
         [delegateForScrollPage onPageScrollEnable:enable];
+    }
+}
+- (void)addDelegateForViewDidAppear:(id<MyViewDidAppearDelegate>)delegateForViewDidAppear{
+    [delegateList addObject:delegateForViewDidAppear];
+}
+- (void)removeDelegateForViewDidAppear:(id<MyViewDidAppearDelegate>)delegateForViewDidAppear{
+    [delegateList removeObject:delegateForViewDidAppear];
+}
+- (void)notifyToViewDidAppear{
+    for (id<MyViewDidAppearDelegate> temp in delegateList) {
+        [temp onMyViewDidAppear];
     }
 }
 @end

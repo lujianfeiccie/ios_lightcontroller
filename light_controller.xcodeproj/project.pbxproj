@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186F3C70181D4EAB00A56CD6 /* MainiPhone5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186F3C6F181D4EAB00A56CD6 /* MainiPhone5.storyboard */; };
 		188655541809A47D00035915 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 188655531809A47D00035915 /* UserInfo.m */; };
 		18C274B318057A1E0051F64C /* four_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AA18057A1E0051F64C /* four_down.png */; };
 		18C274B418057A1E0051F64C /* four_left_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AB18057A1E0051F64C /* four_left_down.png */; };
@@ -88,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186F3C6F181D4EAB00A56CD6 /* MainiPhone5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainiPhone5.storyboard; sourceTree = "<group>"; };
 		188655521809A47D00035915 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		188655531809A47D00035915 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		18C274AA18057A1E0051F64C /* four_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_down.png; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				18C7ADC11802CA2500F62819 /* Constant.m */,
 				18D9F71D180A33AF009B0CF0 /* Protocol.h */,
 				18D9F71E180A33AF009B0CF0 /* Protocol.m */,
+				186F3C6F181D4EAB00A56CD6 /* MainiPhone5.storyboard */,
 			);
 			path = light_controller;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				18EBCC041805AEAD005ED434 /* timer.png in Resources */,
 				18C274B518057A1E0051F64C /* four_left_up.png in Resources */,
 				18EBCBFE1805AEAD005ED434 /* meeting.png in Resources */,
+				186F3C70181D4EAB00A56CD6 /* MainiPhone5.storyboard in Resources */,
 				18CFBFB418099820001511D7 /* SVProgressHUD.bundle in Resources */,
 				18C274B818057A1E0051F64C /* four_right_up.png in Resources */,
 				18CF26EF1806FC4700F1053F /* center_rpg.png in Resources */,

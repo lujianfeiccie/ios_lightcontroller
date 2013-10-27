@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -18,6 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -35,10 +36,6 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2WR-bj-Gxb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hph-Ui-0WB" customClass="TwoKeyButton">
                                 <rect key="frame" x="28" y="313" width="55" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,7 +88,7 @@
                                 <rect key="frame" x="63" y="120" width="194" height="194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ib-QQ-fWV">
+                            <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ib-QQ-fWV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
@@ -123,13 +120,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VRv-1H-G62"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="fourkeybtn" destination="UPd-Dw-Lp5" id="1tR-bN-P6K"/>
-                        <outlet property="imageview" destination="2WR-bj-Gxb" id="EZI-Gj-tkP"/>
+                        <outlet property="toolbar" destination="9Ib-QQ-fWV" id="h2L-0U-EFO"/>
                         <outlet property="twokeybtn1" destination="hph-Ui-0WB" id="twU-k1-lPq"/>
                         <outlet property="twokeybtn2" destination="tfi-0Z-nDb" id="Kz8-9h-YKe"/>
                         <outlet property="twokeybtn3" destination="eX5-YT-Ho2" id="jAk-gl-8EM"/>
@@ -199,6 +195,7 @@
                     </view>
                     <connections>
                         <outlet property="connectbtn" destination="GQk-VE-5uJ" id="MRf-qv-7M8"/>
+                        <outlet property="toolbar" destination="R3h-PJ-dB8" id="CtN-Rn-PB8"/>
                         <outlet property="txtIP" destination="nh8-Sd-cya" id="m0g-c6-U16"/>
                         <outlet property="txtPort" destination="0a4-ul-Oo0" id="e9T-Kp-UnV"/>
                     </connections>
@@ -219,10 +216,6 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7l-XA-QKd">
-                                <rect key="frame" x="-2" y="0.0" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au1-M9-HIj">
                                 <rect key="frame" x="26" y="50" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -331,7 +324,7 @@
                     </view>
                     <connections>
                         <outlet property="centerButton" destination="dEW-NJ-HBJ" id="IaP-DC-SkA"/>
-                        <outlet property="imageview" destination="L7l-XA-QKd" id="Olu-lz-J7T"/>
+                        <outlet property="toolbar" destination="vBN-Lh-59x" id="sI3-bj-N2y"/>
                         <outlet property="twokeybtn1" destination="Lmr-g3-qvq" id="lrN-wd-X5v"/>
                         <outlet property="twokeybtn2" destination="qJ1-Ma-fNm" id="tME-J3-9zE"/>
                         <outlet property="twokeybtn3" destination="5VC-yo-ATe" id="dSa-s6-x1S"/>
@@ -354,10 +347,6 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-Qw-sWZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlz-U0-ZzR">
                                 <rect key="frame" x="26" y="55" width="80" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -577,7 +566,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="imageview" destination="dx7-Qw-sWZ" id="WCZ-su-XLj"/>
+                        <outlet property="toolbar" destination="pqg-Xy-07d" id="Haj-Ya-nCJ"/>
                         <outlet property="twokeybtn1" destination="16s-ZN-I8v" id="8ua-D6-f3H"/>
                         <outlet property="twokeybtn2" destination="7bN-Fh-tqi" id="Dix-z3-fII"/>
                         <outlet property="twokeybtn3" destination="kfN-sN-RnE" id="Zbu-R9-zcP"/>

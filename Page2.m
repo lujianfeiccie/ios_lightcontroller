@@ -35,7 +35,11 @@
     
     _centerButton.delegate = self;
      mApp=[[UIApplication sharedApplication] delegate];
-    [_imageview setImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
+    
+    UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
+    [self.view addSubview:customBackground];
+    [self.view sendSubviewToBack:customBackground];
+       [mApp addDelegateForViewDidAppear: self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,5 +145,12 @@
 }
 - (void)log:(NSString*) msg{
     NSLog([NSString stringWithFormat:@"page2-%@",msg],nil);
+}
+-(void) onMyViewDidAppear{
+    NSLog(@"Page2-viewDidAppear");
+    if(iPhone5){
+        _toolbar.frame =CGRectMake(0, 23, _toolbar.frame.size.width, _toolbar.frame.size.height);
+        //  NSLog(@"_toolbar bounds width=%f height=%f",_toolbar.frame.origin.x,_toolbar.frame.origin.y);
+    }
 }
 @end

@@ -29,8 +29,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    appDelegate =[[UIApplication sharedApplication] delegate];
-    appDelegate.delegate=self;
+    mApp =[[UIApplication sharedApplication] delegate];
+    mApp.delegate=self;
 
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];//读取用户信息
     NSData* udObject = [ud objectForKey:@"UserInfo"];
@@ -40,11 +40,12 @@
         _txtPort.text = mUserInfo._port;
     }
     
-    if([appDelegate isConnecting]){
+    if([mApp isConnecting]){
         [self UpdateUI_forConnect];
         return;
     }
     [self UpdateUI_forDisconnect];
+    [mApp addDelegateForViewDidAppear: self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,8 +69,8 @@
     [_connectbtn setTitle:@"连接"];
 }
 - (IBAction)connectbtnClick:(id)sender {
-    if([appDelegate isConnecting]){
-        [appDelegate Disconnect];
+    if([mApp isConnecting]){
+        [mApp Disconnect];
         return;
     }
     NSString *serverIp = _txtIP.text;
@@ -89,7 +90,7 @@
        [serverPort isMatchedByRegex:regexPort]){
         NSLog(@"Matched");
         
-       [appDelegate Connect:serverIp :[serverPort intValue]];
+       [mApp Connect:serverIp :[serverPort intValue]];
         
     }else{
         NSLog(@"Not matched");
@@ -122,5 +123,12 @@
 -(void)onDisconnect{
     [SVProgressHUD showSuccessWithStatus:@"断开成功"];
     [self UpdateUI_forDisconnect];
+}
+-(void) onMyViewDidAppear{
+    NSLog(@"Page3-viewDidAppear");
+    if(iPhone5){
+        _toolbar.frame =CGRectMake(0, 23, _toolbar.frame.size.width, _toolbar.frame.size.height);
+        //  NSLog(@"_toolbar bounds width=%f height=%f",_toolbar.frame.origin.x,_toolbar.frame.origin.y);
+    }
 }
 @end

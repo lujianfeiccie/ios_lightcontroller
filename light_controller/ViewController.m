@@ -24,9 +24,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self buildLayout];
-    mApp=[[UIApplication sharedApplication] delegate];
-    mApp.delegateForScrollPage = self;
+    NSLog(@"ViewController-viewdidload");
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"ViewController-viewDidAppear");
+    if(mApp!=nil){
+    [mApp notifyToViewDidAppear];
+    }
+}
+
 -(void)buildLayout
 {
     self.m_sc.delegate =self;
@@ -46,29 +53,37 @@
         _m_sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width,self.view.frame.size.height)];
         [_m_sc setContentSize:CGSizeMake(self.view.frame.size.width * NUM_OF_PAGES,self.view.frame.size.height)];
         
+        NSLog(@"get storyboard");
+        if(mApp==nil){
+            mApp=[[UIApplication sharedApplication] delegate];
+            mApp.delegateForScrollPage = self;
+        }
         // 获取故事板
-        UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIStoryboard *board = mApp.storyBoard;
         // 获取故事板中某个View
         
         //第一页
         Page1 *page1 = [board instantiateViewControllerWithIdentifier:@"page1"];
         page1.view.frame =CGRectMake(0,0 , self.view.bounds.size.width,
                                      self.view.bounds.size.height);
-        page1.view.backgroundColor = [UIColor whiteColor];
+        
+      //  NSLog(@"rootview bounds width=%f height=%f",self.view.bounds.size.width,self.view.bounds.size.height);
+       // NSLog(@"rootview frame width=%f height=%f",self.view.frame.size.width,self.view.frame.size.height);
+        page1.view.backgroundColor = [UIColor blackColor];
         [_m_sc addSubview:page1.view];//加入到ScrollView
         
         //第二页
         Page2* page2 = [board instantiateViewControllerWithIdentifier:@"page2"];
         page2.view.frame =CGRectMake(self.view.bounds.size.width,0 , self.view.bounds.size.width,
                                      self.view.bounds.size.height);
-        page2.view.backgroundColor = [UIColor greenColor];
+        page2.view.backgroundColor = [UIColor blackColor];
         [_m_sc addSubview:page2.view];//加入到ScrollView
         
         //第三页
         Page3* page3 = [board instantiateViewControllerWithIdentifier:@"page3"];
         page3.view.frame =CGRectMake(self.view.bounds.size.width * 2,0 , self.view.bounds.size.width,
                                      self.view.bounds.size.height);
-        page3.view.backgroundColor = [UIColor blueColor];
+        page3.view.backgroundColor = [UIColor blackColor];
         [_m_sc addSubview:page3.view];//加入到ScrollView
 
        
@@ -84,7 +99,9 @@
 {
     if (!_m_pageC)
     {
-        _m_pageC = [[UIPageControl alloc]initWithFrame:CGRectMake(60,430,200,30)];//页面控制条区域
+        _m_pageC = [[UIPageControl alloc]initWithFrame:CGRectMake(60,self.view.frame.size.height-50,200,30)];//页面控制条区域
+        
+        NSLog(@"viewheight:%f",self.view.frame.size.height);
         _m_pageC.backgroundColor = [UIColor clearColor]; //透明背景
         _m_pageC.currentPageIndicatorTintColor = [UIColor whiteColor];//当前页面圆点颜色
         _m_pageC.pageIndicatorTintColor = [UIColor blackColor];//未选中圆点颜色

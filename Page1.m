@@ -20,21 +20,31 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
+    NSLog(@"initWithNibName");
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        NSLog(@"Page1-viewDidLoad");
     // Do any additional setup after loading the view from its nib.
     _twokeybtn1.delegate = self;
     _twokeybtn2.delegate = self;
     _twokeybtn3.delegate = self;
     _twokeybtn4.delegate = self;
     _fourkeybtn.delegate = self;
-    [_imageview setImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
+    
+    
+   
+     UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
+    [self.view addSubview:customBackground];
+    [self.view sendSubviewToBack:customBackground];
+    
     mApp=[[UIApplication sharedApplication] delegate];
+    [mApp addDelegateForViewDidAppear: self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +57,7 @@
     NSLog(@"onTwoKeyButtonClick %@",[NSString stringWithFormat:@"btnID %i enable %i",btnID,enable]);
    // mApp.control_toggle(Protocol.FLAG_UI_COLOR, 1, btn_1.isStateOn());
      [mApp control_toggle:FLAG_UI_COLOR LightNo:btnID LightState:enable];
+      _toolbar.frame =CGRectMake(0, 0, _toolbar.frame.size.width, _toolbar.frame.size.height);
 }
 
 -(void)onUpTouchDown:(Boolean) leftMode{
@@ -96,5 +107,12 @@
     [self.navigationController pushViewController:next animated:YES];
 
 }*/
+-(void) onMyViewDidAppear{
+    NSLog(@"Page1-viewDidAppear");
+    if(iPhone5){
+    _toolbar.frame =CGRectMake(0, 23, _toolbar.frame.size.width, _toolbar.frame.size.height);
+  //  NSLog(@"_toolbar bounds width=%f height=%f",_toolbar.frame.origin.x,_toolbar.frame.origin.y);
+    }
+}
 
 @end

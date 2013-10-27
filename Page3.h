@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "TwoKeyButton.h"
 #import "AppDelegate.h"
-@interface Page3 : UIViewController<TwoKeyButtonDelegate>
+@interface Page3 : UIViewController<TwoKeyButtonDelegate,MyViewDidAppearDelegate>
 {
     AppDelegate *mApp;
 }
-@property (weak, nonatomic) IBOutlet UIImageView *imageview;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn1;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn2;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn3;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn4;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 - (IBAction)onbtnClick:(id)sender;
 - (IBAction)offbtnClick:(id)sender;
 - (IBAction)settingbtnClick:(id)sender;
