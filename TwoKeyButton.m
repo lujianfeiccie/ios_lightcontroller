@@ -19,13 +19,14 @@
     if (self) {
         // Initialization code
        _enable = NO;
-       //_btnID = 1;
     }
     
-   // NSLog(@"initWithCoder %@",[NSString stringWithFormat:@"enable %i btnID %i",_enable,_btnID]);
-    
     [self addTarget:self action:@selector(butonPress) forControlEvents:UIControlEventTouchUpInside];
-    
+
+    if(IOS_VERSION<7){
+       CGAffineTransform translate=CGAffineTransformMakeTranslation(0, -20);//上移20像素
+       self.transform=translate;
+    }
     return self;
 }
 // Only override drawRect: if you perform custom drawing.
@@ -44,7 +45,6 @@
     }
 }
 -(void) butonPress{
-   // NSLog(@"butonPress");
     _enable = !_enable;
     [self setNeedsDisplay];
     if(_delegate!=Nil){
@@ -52,4 +52,9 @@
     }
 }
 
+-(void) MyLog: (NSString*) msg{
+    #if defined(LOG_DEBUG)
+    NSLog(@"%@ %@",NSStringFromClass([self class]),msg);
+    #endif
+}
 @end

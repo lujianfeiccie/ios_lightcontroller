@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AppDelegate.h"
 //接口定义
 @protocol TwoKeyButtonDelegate <NSObject>
 @required

@@ -24,11 +24,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self buildLayout];
-    NSLog(@"ViewController-viewdidload");
+    [self MyLog:@"viewdidload"];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSLog(@"ViewController-viewDidAppear");
+    [self MyLog:@"viewDidAppear"];
     if(mApp!=nil){
     [mApp notifyToViewDidAppear];
     }
@@ -53,7 +53,7 @@
         _m_sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width,self.view.frame.size.height)];
         [_m_sc setContentSize:CGSizeMake(self.view.frame.size.width * NUM_OF_PAGES,self.view.frame.size.height)];
         
-        NSLog(@"get storyboard");
+        [self MyLog:@"get storyboard"];
         if(mApp==nil){
             mApp=[[UIApplication sharedApplication] delegate];
             mApp.delegateForScrollPage = self;
@@ -99,9 +99,13 @@
 {
     if (!_m_pageC)
     {
-        _m_pageC = [[UIPageControl alloc]initWithFrame:CGRectMake(60,self.view.frame.size.height-50,200,30)];//页面控制条区域
+        NSInteger heightOffset = 30;
+       /* if (iPhone5) {
+            heightOffset = 50;
+        }*/
+        _m_pageC = [[UIPageControl alloc]initWithFrame:CGRectMake(60,self.view.frame.size.height-heightOffset,200,30)];//页面控制条区域
         
-        NSLog(@"viewheight:%f",self.view.frame.size.height);
+        [self MyLog:[NSString stringWithFormat:@"viewheight:%f",self.view.frame.size.height]];
         _m_pageC.backgroundColor = [UIColor clearColor]; //透明背景
         _m_pageC.currentPageIndicatorTintColor = [UIColor whiteColor];//当前页面圆点颜色
         _m_pageC.pageIndicatorTintColor = [UIColor blackColor];//未选中圆点颜色
@@ -114,7 +118,7 @@
    
    // int index = [(UIButton *)sender tag];
     NSInteger index = _m_pageC.currentPage;
-    NSLog(@"tapBotAction %i",index);
+    [self MyLog:[NSString stringWithFormat:@"tapBotAction %i",index ]];
 
     NSInteger width = self.view.bounds.size.width;
     [_m_sc setContentOffset:CGPointMake(index * width, 0) animated:YES];
@@ -130,5 +134,11 @@
     int size  = self.view.frame.size.width;
     int page = self.m_sc.contentOffset.x/size;
     self.m_pageC.currentPage = page;
+}
+
+-(void) MyLog: (NSString*) msg{
+    #if defined(LOG_DEBUG)
+    NSLog(@"%@ %@",NSStringFromClass([self class]),msg);
+    #endif
 }
 @end

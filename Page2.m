@@ -49,64 +49,64 @@
 }
 
 -(void)onTwoKeyButtonClick:(NSInteger) btnID :(Boolean) enable{
-    NSLog(@"onTwoKeyButtonClick %@",[NSString stringWithFormat:@"btnID %i enable %i",btnID,enable]);
+    [self MyLog:[NSString stringWithFormat:@"onTwoKeyButtonClick btnID %i enable %i",btnID,enable]];
     [mApp control_toggle:FLAG_UI_RGB LightNo:btnID LightState:enable];
 }
 -(void)onAngleReceive:(CGFloat) angle{
-    NSLog(@"angle receive %f",angle);
+    [self MyLog:[NSString stringWithFormat:@"angle receive %f",angle]];
     NSInteger angleDistance = 29;
     if (angle >= 0 && angle <= angleDistance) {
         //1
-        [self log:@"1"];
+        [self MyLog:@"1"];
         [mApp control_rgb:0x09];
     }else if (angle >= 30 && angle <= 30+angleDistance){
         //2
-        [self log:@"2"];
+        [self MyLog:@"2"];
         [mApp control_rgb:0x08];
     }else if (angle >= 60 && angle <= 60+angleDistance){
         //3
-        [self log:@"3"];
+        [self MyLog:@"3"];
         [mApp control_rgb:0x07];
     }else if (angle >= 90 && angle <= 90+angleDistance){
         //4
-        [self log:@"4"];
+        [self MyLog:@"4"];
         [mApp control_rgb:0x06];
     }else if (angle >= 120 && angle <= 120+angleDistance){
         //5
-        [self log:@"5"];
+        [self MyLog:@"5"];
         [mApp control_rgb:0x05];
     }else if (angle >= 150 && angle <= 150+angleDistance){
         //6
-        [self log:@"6"];
+        [self MyLog:@"6"];
         [mApp control_rgb:0x04];
     }else if (angle >= 180 && angle <= 180+angleDistance){
         //7
-        [self log:@"7"];
+        [self MyLog:@"7"];
         [mApp control_rgb:0x03];
     }else if (angle >= 210 && angle <= 210+angleDistance){
         //8
-        [self log:@"8"];
+        [self MyLog:@"8"];
         [mApp control_rgb:0x02];
     }else if (angle >= 240 && angle <= 240+angleDistance){
         //9
-        [self log:@"9 red"];
+        [self MyLog:@"9 red"];
         [mApp control_rgb:0x01];
     }else if (angle >= 270 && angle <= 270+angleDistance){
         //10
-        [self log:@"10"];
+        [self MyLog:@"10"];
          [mApp control_rgb:0x0c];
     }else if (angle >= 300 && angle <= 300+angleDistance){
         //11
-        [self log:@"11"];
+        [self MyLog:@"11"];
          [mApp control_rgb:0x0b];
     }else if (angle >= 330 && angle <= 330+angleDistance){
         //12
-        [self log:@"12"];
+        [self MyLog:@"12"];
          [mApp control_rgb:0x0a];
     }
 }
 -(void)onCenterButtonClick:(Boolean) rgb_mode :(RGBIndex) index{
-    NSLog(@"%hhu %i",rgb_mode,index);
+    [self MyLog:[NSString stringWithFormat:@"%hhu %i",rgb_mode,index]];
     if (rgb_mode == NO) {
         switch (index) {
             case R:
@@ -143,14 +143,17 @@
     UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"pagesetting"];
     [[mApp navController] pushViewController:next animated:YES];
 }
-- (void)log:(NSString*) msg{
-    NSLog([NSString stringWithFormat:@"page2-%@",msg],nil);
-}
+
 -(void) onMyViewDidAppear{
-    NSLog(@"Page2-viewDidAppear");
+    [self MyLog:@"viewDidAppear"];
     if(iPhone5){
         _toolbar.frame =CGRectMake(0, 23, _toolbar.frame.size.width, _toolbar.frame.size.height);
         //  NSLog(@"_toolbar bounds width=%f height=%f",_toolbar.frame.origin.x,_toolbar.frame.origin.y);
     }
+}
+-(void) MyLog: (NSString*) msg{
+#if defined(LOG_DEBUG)
+    NSLog(@"%@ %@",NSStringFromClass([self class]),msg);
+#endif
 }
 @end

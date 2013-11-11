@@ -59,6 +59,11 @@
     [self addSubview:small_circle];
     
      mApp=[[UIApplication sharedApplication] delegate];//用于通知主界面禁用/恢复手势
+    
+    if(IOS_VERSION<7){
+        CGAffineTransform translate=CGAffineTransformMakeTranslation(0, -20);//上移20像素
+        self.transform=translate;
+    }
     return self;
 }
 - (void) setCenterButtonBG:(NSString*) imageName{
@@ -69,7 +74,6 @@
 {
     Boolean result = NO;
     CGFloat distance = [ self getDistance:x : y];
-    
     if(distance < radius-5 && distance > radius/2){
         result = YES;
     }
@@ -83,8 +87,7 @@
         return;
     }
     if(sender.numberOfTapsRequired == 1) {
-        //单指单击
-       // NSLog(@"单指单击");
+
         ++center_button_index;
         center_button_index = center_button_index % 4;
         if(center_button_index == 0){
@@ -126,7 +129,6 @@
     CGFloat x = point.x;
     CGFloat y = point.y;
     
-    [small_circle setFrame:CGRectMake(x,y, 10, 10)];
     
     
     if(rgb_mode == NO){
@@ -141,6 +143,10 @@
     if([self isInRange:x:y] == NO){
         return;
     }
+    [self MyLog: @"isInRange"];
+    
+    [small_circle setFrame:CGRectMake(x,y, 10, 10)];
+    
     /*if(delegate==Nil){
         return;
     }*/
@@ -227,5 +233,10 @@
     result = sqrt(offsetX*offsetX + offsetY*offsetY);
     
     return result;
+}
+-(void) MyLog: (NSString*) msg{
+    #if defined(LOG_DEBUG)
+    NSLog(@"%@ %@",NSStringFromClass([self class]),msg);
+    #endif
 }
 @end

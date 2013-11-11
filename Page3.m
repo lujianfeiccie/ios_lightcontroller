@@ -45,7 +45,7 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)onTwoKeyButtonClick:(NSInteger) btnID :(Boolean) enable{
-    NSLog(@"onTwoKeyButtonClick %@",[NSString stringWithFormat:@"btnID %i enable %i",btnID,enable]);
+    [self MyLog:[NSString stringWithFormat:@"onTwoKeyButtonClick btnID %i enable %i",btnID,enable]];
     [mApp control_toggle:FLAG_UI_MODE LightNo:btnID LightState:enable];
 }
 - (IBAction)onbtnClick:(id)sender {
@@ -93,10 +93,15 @@
     [mApp control_mode:FLAG_FUNCTION_RECREATION];
 }
 -(void) onMyViewDidAppear{
-    NSLog(@"Page3-viewDidAppear");
+    [self MyLog:@"viewDidAppear"];
     if(iPhone5){
         _toolbar.frame =CGRectMake(0, 23, _toolbar.frame.size.width, _toolbar.frame.size.height);
         //  NSLog(@"_toolbar bounds width=%f height=%f",_toolbar.frame.origin.x,_toolbar.frame.origin.y);
     }
+}
+-(void) MyLog: (NSString*) msg{
+#if defined(LOG_DEBUG)
+    NSLog(@"%@ %@",NSStringFromClass([self class]),msg);
+#endif
 }
 @end

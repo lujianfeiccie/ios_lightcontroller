@@ -23,9 +23,9 @@ typedef NS_ENUM(NSInteger, RGBIndex) {
 @interface CircleButton : UIImageView
 {
     CGPoint center;
-    NSInteger radius;
-    NSInteger width;
-    NSInteger height;
+    CGFloat radius;
+    CGFloat width;
+    CGFloat height;
     UIImageView* small_circle;
     UIImageView* center_button;
     NSString* IMAGE_RGB;

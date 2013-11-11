@@ -88,19 +88,19 @@
     
     if([serverIp isMatchedByRegex:regexIp] &&
        [serverPort isMatchedByRegex:regexPort]){
-        NSLog(@"Matched");
+        [self MyLog:@"Matched"];
         
        [mApp Connect:serverIp :[serverPort intValue]];
         
     }else{
-        NSLog(@"Not matched");
+        [self MyLog:@"Not matched"];
         UIAlertView* alertdlg = [[UIAlertView alloc]initWithTitle:@"提示" message:@"非法输入，请重来!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertdlg show];
         alertdlg = nil;
     }
 }
 -(void)onConnectSuccessfully{
-    NSLog(@"连接成功");
+    [self MyLog:@"连接成功"];
     NSString *serverIp = _txtIP.text;
     NSString *serverPort = _txtPort.text;
 
@@ -117,7 +117,7 @@
     [self.navigationController popViewControllerAnimated:YES];//返回主界面
 }
 -(void)onConnectFailed{
-    NSLog(@"连接失败");
+    [self MyLog:@"连接失败"];
     [SVProgressHUD showErrorWithStatus:@"连接失败"];
 }
 -(void)onDisconnect{
@@ -125,10 +125,15 @@
     [self UpdateUI_forDisconnect];
 }
 -(void) onMyViewDidAppear{
-    NSLog(@"Page3-viewDidAppear");
-    if(iPhone5){
+    [self MyLog:@"onMyViewDidAppear"];
+   /* if(iPhone5){
         _toolbar.frame =CGRectMake(0, 23, _toolbar.frame.size.width, _toolbar.frame.size.height);
         //  NSLog(@"_toolbar bounds width=%f height=%f",_toolbar.frame.origin.x,_toolbar.frame.origin.y);
-    }
+    }*/
+}
+-(void) MyLog: (NSString*) msg{
+#if defined(LOG_DEBUG)
+    NSLog(@"%@ %@",NSStringFromClass([self class]),msg);
+#endif
 }
 @end

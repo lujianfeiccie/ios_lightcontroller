@@ -16,18 +16,20 @@
 @synthesize storyBoard;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self log:@"didFinishLaunchingWithOptions" ];
+    [self MyLog:@"didFinishLaunchingWithOptions" ];
 
     delegateList = [[NSMutableArray alloc] init];
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    if(iPhone5){
-        storyBoard=[UIStoryboard storyboardWithName:@"MainiPhone5" bundle:nil];
-    }else{
+    //if(iPhone5){
+    //    storyBoard=[UIStoryboard storyboardWithName:@"MainiPhone5" bundle:nil];
+    //}else{
         storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    }
-  
+    //}
+    
+    //[self MyLog:[NSString stringWithFormat:@"%f",[[[UIDevice currentDevice] systemVersion] floatValue]]];
+    [self MyLog:[NSString stringWithFormat:@"%f",IOS_VERSION]];
     ViewController *rootView =  [storyBoard instantiateViewControllerWithIdentifier:@"rootview"];
     self.navController = [[UINavigationController alloc] init];
     [self.navController pushViewController:rootView animated:YES];
@@ -57,11 +59,12 @@
          result = [asyncSocket connectToHost:serverIp onPort:port error:&err];
     }
     @catch (NSException *exception) {
-       NSLog(@"exception:%@ err:%@",exception,err); 
+        [self MyLog:[NSString stringWithFormat:@"exception:%@ err:%@",exception,err]];
     }
     @finally {
         
     }
+    
     return result;
 }
 - (void)Disconnect{
@@ -72,27 +75,27 @@
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    [self log:@"applicationWillResignActive"];
+    [self MyLog:@"applicationWillResignActive"];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    [self log:@"applicationDidEnterBackground"];
+    [self MyLog:@"applicationDidEnterBackground"];
     [self Disconnect];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    [self log:@"applicationWillEnterForeground"];
+    [self MyLog:@"applicationWillEnterForeground"];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [self log:@"applicationDidBecomeActive"];
+    [self MyLog:@"applicationDidBecomeActive"];
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];//读取用户信息
     NSData* udObject = [ud objectForKey:@"UserInfo"];
     UserInfo* mUserInfo = [NSKeyedUnarchiver unarchiveObjectWithData:udObject] ;
@@ -104,7 +107,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [self log:@"applicationWillTerminate"];
+    [self MyLog:@"applicationWillTerminate"];
 
 }
 
@@ -115,7 +118,7 @@
  * before"onSocket:didAcceptNewSocket:" or "onSocket:didConnectToHost:".
  **/
 - (void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err{
-    [self log:@"willDisconnectWithError" ];
+    [self MyLog:@"willDisconnectWithError" ];
     isConnecting = NO;
     isConnectedWithError = YES;
     if(delegate!=nil){
@@ -131,7 +134,7 @@
  * this delegate method will be called before the disconnect method returns.
  **/
 - (void)onSocketDidDisconnect:(AsyncSocket *)sock{
-    [self log:@"onSocketDidDisconnect" ];
+    [self MyLog:@"onSocketDidDisconnect" ];
     isConnecting = NO;
     if(isConnectedWithError == YES){
         return;
@@ -146,7 +149,7 @@
  * the same delegate and will call "onSocket:didConnectToHost:port:".
  **/
 - (void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket{
-       [self log:@"didAcceptNewSocket" ];
+       [self MyLog:@"didAcceptNewSocket" ];
 }
 
 
@@ -163,7 +166,7 @@
  * configure the CFReadStream and CFWriteStream in the onSocket:didConnectToHost:port: method.
  **/
 - (BOOL)onSocketWillConnect:(AsyncSocket *)sock{
-    [self log:@"onSocketWillConnect" ];
+    [self MyLog:@"onSocketWillConnect" ];
 
     return YES;
 }
@@ -173,7 +176,7 @@
  * The host parameter will be an IP address, not a DNS name.
  **/
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port{
-    [self log:@"didConnectToHost" ];
+    [self MyLog:@"didConnectToHost" ];
         isConnecting = YES;
     if(delegate!=nil){
         [delegate onConnectSuccessfully];
@@ -185,7 +188,7 @@
  * Not called if there is an error.
  **/
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
-    [self log:@"didReadData" ];
+    [self MyLog:@"didReadData" ];
 }
 
 /**
@@ -194,14 +197,14 @@
  * It may be used to for things such as updating progress bars.
  **/
 - (void)onSocket:(AsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag{
-    [self log:@"didReadPartialDataOfLength" ];
+    [self MyLog:@"didReadPartialDataOfLength" ];
 }
 
 /**
  * Called when a socket has completed writing the requested data. Not called if there is an error.
  **/
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag{
-    [self log:@"didWriteDataWithTag" ];
+    [self MyLog:@"didWriteDataWithTag" ];
 }
 
 /**
@@ -209,7 +212,7 @@
  * It may be used to for things such as updating progress bars.
  **/
 - (void)onSocket:(AsyncSocket *)sock didWritePartialDataOfLength:(NSUInteger)partialLength tag:(long)tag{
-    [self log:@"didWritePartialDataOfLength" ];
+    [self MyLog:@"didWritePartialDataOfLength" ];
 }
 
 
@@ -223,11 +226,9 @@
  * and the onSocket:willDisconnectWithError: delegate method will be called with the specific SSL error code.
  **/
 - (void)onSocketDidSecure:(AsyncSocket *)sock{
-    [self log:@"onSocketDidSecure" ];
+    [self MyLog:@"onSocketDidSecure" ];
 }
-- (void) log:(NSString*) msg{
-    NSLog([NSString stringWithFormat:@"AppDelegate-%@",msg],Nil);
-}
+
 - (void)control_toggle:(Byte) FLAG_UI LightNo:(NSInteger) lightNo LightState:(Boolean) lightState{
         Byte data[]={
             FLAG_HEADER,
@@ -310,5 +311,10 @@
     for (id<MyViewDidAppearDelegate> temp in delegateList) {
         [temp onMyViewDidAppear];
     }
+}
+-(void) MyLog: (NSString*) msg{
+#if defined(LOG_DEBUG)
+    NSLog(@"%@ %@",NSStringFromClass([self class]),msg);
+#endif
 }
 @end

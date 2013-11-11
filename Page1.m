@@ -22,14 +22,14 @@
         // Custom initialization
         
     }
-    NSLog(@"initWithNibName");
+    [self MyLog:@"initWithNibName"];
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        NSLog(@"Page1-viewDidLoad");
+    [self MyLog:@"viewDidLoad"];
     // Do any additional setup after loading the view from its nib.
     _twokeybtn1.delegate = self;
     _twokeybtn2.delegate = self;
@@ -54,30 +54,30 @@
 }
 
 -(void)onTwoKeyButtonClick:(NSInteger) btnID :(Boolean) enable{
-    NSLog(@"onTwoKeyButtonClick %@",[NSString stringWithFormat:@"btnID %i enable %i",btnID,enable]);
+    [self MyLog:[NSString stringWithFormat:@"onTwoKeyButtonClick btnID %i enable %i",btnID,enable]];
    // mApp.control_toggle(Protocol.FLAG_UI_COLOR, 1, btn_1.isStateOn());
      [mApp control_toggle:FLAG_UI_COLOR LightNo:btnID LightState:enable];
       _toolbar.frame =CGRectMake(0, 0, _toolbar.frame.size.width, _toolbar.frame.size.height);
 }
 
 -(void)onUpTouchDown:(Boolean) leftMode{
-    NSLog([NSString stringWithFormat:@"up touchDown %hhu",leftMode],Nil);
+    [self MyLog:[NSString stringWithFormat:@"up touchDown %hhu",leftMode]];
     [mApp control_cool_or_warm_up:FLAG_FUNCTION_COOL_WARM_INCREASE IsCool:leftMode];//调亮按下
 }
 -(void)onUpTouchUp:(Boolean) leftMode{
-    NSLog([NSString stringWithFormat:@"up touchUp %hhu",leftMode],Nil);
+    [self MyLog:[NSString stringWithFormat:@"up touchUp %hhu",leftMode]];
      [mApp control_cool_or_warm_up:FLAG_FUNCTION_COOL_WARM_STOP IsCool:leftMode];//调亮抬起
 }
 -(void)onDownTouchDown:(Boolean) leftMode{
-    NSLog([NSString stringWithFormat:@"down touchDown %hhu",leftMode],Nil);
+    [self MyLog:[NSString stringWithFormat:@"down touchDown %hhu",leftMode]];
      [mApp control_cool_or_warm_down:FLAG_FUNCTION_COOL_WARM_INCREASE IsCool:leftMode];//调暗按下
 }
 -(void)onDownTouchUp:(Boolean) leftMode{
-    NSLog([NSString stringWithFormat:@"down touchUp %hhu",leftMode],Nil);
+    [self MyLog:[NSString stringWithFormat:@"down touchUp %hhu",leftMode]];
     [mApp control_cool_or_warm_down:FLAG_FUNCTION_COOL_WARM_STOP IsCool:leftMode];//调暗按下
 }
 - (IBAction)middleButtonClick:(id)sender {
-    NSLog(@"middleButtonClick");
+    [self MyLog:@"middleButtonClick"];
 }
 
 - (IBAction)onbtnClick:(id)sender {
@@ -108,11 +108,15 @@
 
 }*/
 -(void) onMyViewDidAppear{
-    NSLog(@"Page1-viewDidAppear");
+    [self MyLog:@"viewDidAppear"];
     if(iPhone5){
     _toolbar.frame =CGRectMake(0, 23, _toolbar.frame.size.width, _toolbar.frame.size.height);
   //  NSLog(@"_toolbar bounds width=%f height=%f",_toolbar.frame.origin.x,_toolbar.frame.origin.y);
     }
 }
-
+-(void) MyLog: (NSString*) msg{
+#if defined(LOG_DEBUG)
+    NSLog(@"%@ %@",NSStringFromClass([self class]),msg);
+#endif
+}
 @end

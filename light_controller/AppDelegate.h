@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AsyncSocket.h"
 #import "Protocol.h"
+//#define LOG_DEBUG
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 //接口定义
 @protocol MyAsyncSocketDelegate <NSObject>
 @required

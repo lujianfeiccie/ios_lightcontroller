@@ -56,6 +56,11 @@
     IMAGE_RIGHT_DOWN = @"four_right_down.png";
     
     mApp=[[UIApplication sharedApplication] delegate];//用于通知主界面禁用/恢复手势
+    
+    if(IOS_VERSION<7){
+        CGAffineTransform translate=CGAffineTransformMakeTranslation(0, -20);//上移20像素
+        self.transform=translate;
+    }
     return self;
 }
 - (void) setBgImage: (NSString*) imageName
@@ -152,7 +157,7 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    NSLog(@"drawRect");
+   [self MyLog: @"drawRect"];
     
 }
 
@@ -179,4 +184,9 @@
     return result;
 }
 
+-(void) MyLog: (NSString*) msg{
+    #if defined(LOG_DEBUG)
+    NSLog(@"%@ %@",NSStringFromClass([self class]),msg);
+    #endif
+}
 @end

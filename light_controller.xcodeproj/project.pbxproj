@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		186F3C70181D4EAB00A56CD6 /* MainiPhone5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186F3C6F181D4EAB00A56CD6 /* MainiPhone5.storyboard */; };
 		188655541809A47D00035915 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 188655531809A47D00035915 /* UserInfo.m */; };
+		18A1DDC418312AB000D21C31 /* OtherButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A1DDC318312AB000D21C31 /* OtherButton.m */; };
+		18A1DDC718312C9800D21C31 /* OtherLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A1DDC618312C9800D21C31 /* OtherLabel.m */; };
+		18A1DDCA18312CF200D21C31 /* OtherTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A1DDC918312CF200D21C31 /* OtherTextField.m */; };
 		18C274B318057A1E0051F64C /* four_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AA18057A1E0051F64C /* four_down.png */; };
 		18C274B418057A1E0051F64C /* four_left_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AB18057A1E0051F64C /* four_left_down.png */; };
 		18C274B518057A1E0051F64C /* four_left_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C274AC18057A1E0051F64C /* four_left_up.png */; };
@@ -92,6 +95,12 @@
 		186F3C6F181D4EAB00A56CD6 /* MainiPhone5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainiPhone5.storyboard; sourceTree = "<group>"; };
 		188655521809A47D00035915 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		188655531809A47D00035915 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		18A1DDC218312AB000D21C31 /* OtherButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherButton.h; sourceTree = "<group>"; };
+		18A1DDC318312AB000D21C31 /* OtherButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherButton.m; sourceTree = "<group>"; };
+		18A1DDC518312C9800D21C31 /* OtherLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherLabel.h; sourceTree = "<group>"; };
+		18A1DDC618312C9800D21C31 /* OtherLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherLabel.m; sourceTree = "<group>"; };
+		18A1DDC818312CF200D21C31 /* OtherTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTextField.h; sourceTree = "<group>"; };
+		18A1DDC918312CF200D21C31 /* OtherTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTextField.m; sourceTree = "<group>"; };
 		18C274AA18057A1E0051F64C /* four_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_down.png; sourceTree = "<group>"; };
 		18C274AB18057A1E0051F64C /* four_left_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_left_down.png; sourceTree = "<group>"; };
 		18C274AC18057A1E0051F64C /* four_left_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four_left_up.png; sourceTree = "<group>"; };
@@ -380,6 +389,12 @@
 				18CF26E41806DDF400F1053F /* CircleButton.m */,
 				188655521809A47D00035915 /* UserInfo.h */,
 				188655531809A47D00035915 /* UserInfo.m */,
+				18A1DDC218312AB000D21C31 /* OtherButton.h */,
+				18A1DDC318312AB000D21C31 /* OtherButton.m */,
+				18A1DDC518312C9800D21C31 /* OtherLabel.h */,
+				18A1DDC618312C9800D21C31 /* OtherLabel.m */,
+				18A1DDC818312CF200D21C31 /* OtherTextField.h */,
+				18A1DDC918312CF200D21C31 /* OtherTextField.m */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -534,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F981241804510D00FFE3A4 /* TwoKeyButton.m in Sources */,
+				18A1DDC718312C9800D21C31 /* OtherLabel.m in Sources */,
 				18D79E611802FE7500644EC1 /* Page1.m in Sources */,
 				18CFBFB518099820001511D7 /* SVProgressHUD.m in Sources */,
 				18C7ADA21802BFEC00F62819 /* ViewController.m in Sources */,
@@ -547,8 +563,10 @@
 				18C274BE18057A4F0051F64C /* FourKeyButton.m in Sources */,
 				18D79E6A180301EC00644EC1 /* Page3.m in Sources */,
 				18C7ADC21802CA2500F62819 /* Constant.m in Sources */,
+				18A1DDC418312AB000D21C31 /* OtherButton.m in Sources */,
 				188655541809A47D00035915 /* UserInfo.m in Sources */,
 				18CFBFB818099CAD001511D7 /* AsyncSocket.m in Sources */,
+				18A1DDCA18312CF200D21C31 /* OtherTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
