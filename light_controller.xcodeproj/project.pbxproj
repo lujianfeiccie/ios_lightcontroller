@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1853DF7418437E8E00C1FDC9 /* mystring.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1853DF7618437E8E00C1FDC9 /* mystring.strings */; };
+		1853DF7B1843823900C1FDC9 /* OtherBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853DF7A1843823900C1FDC9 /* OtherBarButtonItem.m */; };
 		186F3C70181D4EAB00A56CD6 /* MainiPhone5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186F3C6F181D4EAB00A56CD6 /* MainiPhone5.storyboard */; };
 		188655541809A47D00035915 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 188655531809A47D00035915 /* UserInfo.m */; };
 		18A1DDC418312AB000D21C31 /* OtherButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A1DDC318312AB000D21C31 /* OtherButton.m */; };
@@ -92,6 +94,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1853DF7118437D0F00C1FDC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1853DF7218437DA200C1FDC9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1853DF7318437DA200C1FDC9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1853DF7518437E8E00C1FDC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/mystring.strings; sourceTree = "<group>"; };
+		1853DF7718437E9700C1FDC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/mystring.strings; sourceTree = "<group>"; };
+		1853DF7818437E9900C1FDC9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/mystring.strings; sourceTree = "<group>"; };
+		1853DF791843823900C1FDC9 /* OtherBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherBarButtonItem.h; sourceTree = "<group>"; };
+		1853DF7A1843823900C1FDC9 /* OtherBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherBarButtonItem.m; sourceTree = "<group>"; };
 		186F3C6F181D4EAB00A56CD6 /* MainiPhone5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainiPhone5.storyboard; sourceTree = "<group>"; };
 		188655521809A47D00035915 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		188655531809A47D00035915 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
@@ -277,6 +287,7 @@
 				18C7AD941802BFEC00F62819 /* InfoPlist.strings */,
 				18C7AD971802BFEC00F62819 /* main.m */,
 				18C7AD991802BFEC00F62819 /* light_controller-Prefix.pch */,
+				1853DF7618437E8E00C1FDC9 /* mystring.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -395,6 +406,8 @@
 				18A1DDC618312C9800D21C31 /* OtherLabel.m */,
 				18A1DDC818312CF200D21C31 /* OtherTextField.h */,
 				18A1DDC918312CF200D21C31 /* OtherTextField.m */,
+				1853DF791843823900C1FDC9 /* OtherBarButtonItem.h */,
+				1853DF7A1843823900C1FDC9 /* OtherBarButtonItem.m */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -470,6 +483,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 18C7AD7F1802BFEB00F62819;
 			productRefGroup = 18C7AD891802BFEC00F62819 /* Products */;
@@ -500,6 +514,7 @@
 				18CF26EF1806FC4700F1053F /* center_rpg.png in Resources */,
 				18EBCBF31805A886005ED434 /* btn_off4.png in Resources */,
 				18F981131804361600FFE3A4 /* back.png in Resources */,
+				1853DF7418437E8E00C1FDC9 /* mystring.strings in Resources */,
 				18EBCBFF1805AEAD005ED434 /* mode.png in Resources */,
 				18C274B918057A1E0051F64C /* four_right.png in Resources */,
 				18C7ADA41802BFEC00F62819 /* Images.xcassets in Resources */,
@@ -553,6 +568,7 @@
 				18D79E611802FE7500644EC1 /* Page1.m in Sources */,
 				18CFBFB518099820001511D7 /* SVProgressHUD.m in Sources */,
 				18C7ADA21802BFEC00F62819 /* ViewController.m in Sources */,
+				1853DF7B1843823900C1FDC9 /* OtherBarButtonItem.m in Sources */,
 				18CF26E51806DDF400F1053F /* CircleButton.m in Sources */,
 				18FC72941808440D0027B05E /* PageSetting.m in Sources */,
 				18C7AD9C1802BFEC00F62819 /* AppDelegate.m in Sources */,
@@ -589,10 +605,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1853DF7618437E8E00C1FDC9 /* mystring.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1853DF7518437E8E00C1FDC9 /* Base */,
+				1853DF7718437E9700C1FDC9 /* en */,
+				1853DF7818437E9900C1FDC9 /* ru */,
+			);
+			name = mystring.strings;
+			sourceTree = "<group>";
+		};
 		18C7AD941802BFEC00F62819 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				18C7AD951802BFEC00F62819 /* en */,
+				1853DF7118437D0F00C1FDC9 /* Base */,
+				1853DF7218437DA200C1FDC9 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -609,6 +637,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				18C7ADB41802BFEC00F62819 /* en */,
+				1853DF7318437DA200C1FDC9 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

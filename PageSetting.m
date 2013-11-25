@@ -16,12 +16,26 @@
 
 @implementation PageSetting
 
+/*
+ "PageSetting_Back"="Back";
+ "PageSetting_IP"="IP";
+ "PageSetting_Port"="Port";
+ "PageSetting_Connect"="Connect";
+ "PageSetting_Disconnect"="Disconnect";
+ "PageSetting_Tips"="Tips";
+ "PageSetting_Ip_Port_Tips"="IP and Port can not be empty!";
+ "PageSetting_Input_Invalid"="Input invalid!";
+ "PageSetting_OK"="OK";
+ "PageSetting_Connect_Successfully"="Connect successfully!";
+ "PageSetting_Connect_Failed"="Connect failed!";
+ "PageSetting_Disconnect_Successfully"="Disconnect successfully!";
+ */
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-    }
+           }
     return self;
 }
 
@@ -46,6 +60,12 @@
     }
     [self UpdateUI_forDisconnect];
     [mApp addDelegateForViewDidAppear: self];
+    
+    self.lblIP.text = NSLocalizedStringFromTable(@"PageSetting_IP", STRING_TABLE,nil);
+    self.lblPort.text =NSLocalizedStringFromTable(@"PageSetting_Port", STRING_TABLE,nil);
+    self.connectbtn.title =NSLocalizedStringFromTable(@"PageSetting_Connect", STRING_TABLE,nil);
+    self.back.title = NSLocalizedStringFromTable(@"PageSetting_Back", STRING_TABLE, nil);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,12 +81,12 @@
 - (void)UpdateUI_forConnect{
     [_txtIP setEnabled:NO];
     [_txtPort setEnabled:NO];
-    [_connectbtn setTitle:@"断开"];
+    [_connectbtn setTitle:NSLocalizedStringFromTable(@"PageSetting_Disconnect", STRING_TABLE,nil)];
 }
 - (void)UpdateUI_forDisconnect{
     [_txtIP setEnabled:YES];
     [_txtPort setEnabled:YES];
-    [_connectbtn setTitle:@"连接"];
+    [_connectbtn setTitle:NSLocalizedStringFromTable(@"PageSetting_Connect", STRING_TABLE,nil)];
 }
 - (IBAction)connectbtnClick:(id)sender {
     if([mApp isConnecting]){
@@ -77,7 +97,7 @@
     NSString *serverPort = _txtPort.text;
     
     if([serverIp isEqualToString:@""] || [serverPort isEqualToString:@""]){
-        UIAlertView* alertdlg = [[UIAlertView alloc]initWithTitle:@"提示" message:@"IP或端口不能为空!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView* alertdlg = [[UIAlertView alloc]initWithTitle:NSLocalizedStringFromTable(@"PageSetting_Tips", STRING_TABLE,nil) message:NSLocalizedStringFromTable(@"PageSetting_Ip_Port_Tips", STRING_TABLE,nil) delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"PageSetting_OK", STRING_TABLE,nil) otherButtonTitles:nil, nil];
         [alertdlg show];
         alertdlg = nil;
         return;
@@ -94,7 +114,7 @@
         
     }else{
         [self MyLog:@"Not matched"];
-        UIAlertView* alertdlg = [[UIAlertView alloc]initWithTitle:@"提示" message:@"非法输入，请重来!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView* alertdlg = [[UIAlertView alloc]initWithTitle:NSLocalizedStringFromTable(@"PageSetting_Tips", STRING_TABLE,nil) message:NSLocalizedStringFromTable(@"PageSetting_Input_Invalid", STRING_TABLE, nil) delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"PageSetting_OK", STRING_TABLE,nil) otherButtonTitles:nil, nil];
         [alertdlg show];
         alertdlg = nil;
     }
@@ -105,7 +125,7 @@
     NSString *serverPort = _txtPort.text;
 
     
-    [SVProgressHUD showSuccessWithStatus:@"连接成功"];
+    [SVProgressHUD showSuccessWithStatus:NSLocalizedStringFromTable(@"PageSetting_Connect_Successfully", STRING_TABLE, nil)];
     
     UserInfo* mUserInfo = [[UserInfo alloc] init]; //保存用户信息
     mUserInfo._ip =serverIp;
@@ -118,10 +138,10 @@
 }
 -(void)onConnectFailed{
     [self MyLog:@"连接失败"];
-    [SVProgressHUD showErrorWithStatus:@"连接失败"];
+    [SVProgressHUD showErrorWithStatus:NSLocalizedStringFromTable(@"PageSetting_Connect_Failed", STRING_TABLE, nil)];
 }
 -(void)onDisconnect{
-    [SVProgressHUD showSuccessWithStatus:@"断开成功"];
+    [SVProgressHUD showSuccessWithStatus:NSLocalizedStringFromTable(@"PageSetting_Disconnect_Successfully", STRING_TABLE, nil)];
     [self UpdateUI_forDisconnect];
 }
 -(void) onMyViewDidAppear{

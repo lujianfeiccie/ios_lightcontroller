@@ -49,10 +49,12 @@
     [mApp control_toggle:FLAG_UI_MODE LightNo:btnID LightState:enable];
 }
 - (IBAction)onbtnClick:(id)sender {
+    [self MyLog:@"onbtnClick"];
     [mApp control_toggle:FLAG_UI_MODE LightNo:0 LightState:YES];
 }
 
 - (IBAction)offbtnClick:(id)sender {
+    [self MyLog:@"offbtnClick"];
     [mApp control_toggle:FLAG_UI_MODE LightNo:0 LightState:NO];
 }
 
@@ -62,34 +64,42 @@
 }
 
 - (IBAction)night_modeClick:(id)sender {
+    [self MyLog:@"night_modeClick"];
     [mApp control_mode:FLAG_FUNCTION_NIGHT];
 }
 
 - (IBAction)meeting_modeClick:(id)sender {
+    [self MyLog:@"meeting_modeClick"];
     [mApp control_mode:FLAG_FUNCTION_MEETING];
 }
 
 - (IBAction)reading_modeClick:(id)sender {
+        [self MyLog:@"reading_modeClick"];
     [mApp control_mode:FLAG_FUNCTION_READING];
 }
 
 - (IBAction)mode_modeClick:(id)sender {
+           [self MyLog:@"mode_modeClick"];
     [mApp control_mode:FLAG_FUNCTION_MODE];
 }
 
 - (IBAction)timer_modeClick:(id)sender {
+     [self MyLog:@"timer_modeClick"];
     [mApp control_mode:FLAG_FUNCTION_TIMER];
 }
 
 - (IBAction)alarm_modeClick:(id)sender {
+         [self MyLog:@"alarm_modeClick"];
     [mApp control_mode:FLAG_FUNCTION_ALARM];
 }
 
 - (IBAction)sleep_modeClick:(id)sender {
+       [self MyLog:@"sleep_modeClick"];
     [mApp control_mode:FLAG_FUNCTION_SLEEP];
 }
 
 - (IBAction)recreation_modeClick:(id)sender {
+     [self MyLog:@"recreation_modeClick"];
     [mApp control_mode:FLAG_FUNCTION_RECREATION];
 }
 -(void) onMyViewDidAppear{

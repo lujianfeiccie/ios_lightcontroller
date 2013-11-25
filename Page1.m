@@ -81,10 +81,12 @@
 }
 
 - (IBAction)onbtnClick:(id)sender {
+    [self MyLog:[NSString stringWithFormat:@"onbtnClick"]];
     [mApp control_toggle:FLAG_UI_COLOR LightNo:0 LightState:YES];
 }
 
 - (IBAction)offbtnClick:(id)sender {
+     [self MyLog:[NSString stringWithFormat:@"offbtnClick"]];
      [mApp control_toggle:FLAG_UI_COLOR LightNo:0 LightState:NO];
 }
 

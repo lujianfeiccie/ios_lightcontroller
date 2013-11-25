@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "OtherLabel.h"
 @interface PageSetting : UIViewController<MyAsyncSocketDelegate,MyViewDidAppearDelegate>{
     AppDelegate *mApp;
 }
@@ -16,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtIP;
 @property (weak, nonatomic) IBOutlet UITextField *txtPort;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *connectbtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet OtherLabel *lblIP;
+@property (weak, nonatomic) IBOutlet OtherLabel *lblPort;
 
 @end

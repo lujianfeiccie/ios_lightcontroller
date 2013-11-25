@@ -22,11 +22,11 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //if(iPhone5){
-    //    storyBoard=[UIStoryboard storyboardWithName:@"MainiPhone5" bundle:nil];
-    //}else{
+    if(iPhone5){
+        storyBoard=[UIStoryboard storyboardWithName:@"MainiPhone5" bundle:nil];
+    }else{
         storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //}
+    }
     
     //[self MyLog:[NSString stringWithFormat:@"%f",[[[UIDevice currentDevice] systemVersion] floatValue]]];
     [self MyLog:[NSString stringWithFormat:@"%f",IOS_VERSION]];

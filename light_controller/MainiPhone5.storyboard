@@ -88,10 +88,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="Xpl-cT-dSd">
-                                <rect key="frame" x="0.0" y="23" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="设置" id="qek-d6-fFa">
+                                    <barButtonItem title="设置" id="qek-d6-fFa" customClass="OtherBarButtonItem">
                                         <connections>
                                             <action selector="settingbtnClick:" destination="T2J-UI-Rjn" id="y2g-EI-zab"/>
                                         </connections>
@@ -146,14 +146,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I P :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ0-fW-nmV">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I P :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ0-fW-nmV" customClass="OtherLabel">
                                 <rect key="frame" x="16" y="93" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="端口:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsI-Yl-F9o">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="端口:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsI-Yl-F9o" customClass="OtherLabel">
                                 <rect key="frame" x="13" y="131" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -192,7 +192,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="back" destination="L8P-ot-Nkm" id="Z0p-n1-ch0"/>
                         <outlet property="connectbtn" destination="FTP-1y-VE0" id="dfv-sh-xvd"/>
+                        <outlet property="lblPort" destination="bsI-Yl-F9o" id="txH-Fs-szf"/>
                         <outlet property="toolbar" destination="2v7-N1-GIm" id="1G9-9Q-lEg"/>
                         <outlet property="txtIP" destination="YNQ-sz-47a" id="JWe-ED-Ign"/>
                         <outlet property="txtPort" destination="jVd-4z-oNf" id="oWJ-nQ-glN"/>
@@ -262,7 +264,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="设置" id="uVu-P0-fIs">
+                                    <barButtonItem title="设置" id="uVu-P0-fIs" customClass="OtherBarButtonItem">
                                         <connections>
                                             <action selector="settingbtnClick:" destination="zMq-18-RGP" id="WII-5P-IdN"/>
                                         </connections>
@@ -369,7 +371,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="设置" id="LsB-gg-qhb">
+                                    <barButtonItem title="设置" id="LsB-gg-qhb" customClass="OtherBarButtonItem">
                                         <connections>
                                             <action selector="settingbtnClick:" destination="lFA-gi-tSU" id="kAg-0h-1cJ"/>
                                         </connections>

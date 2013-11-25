@@ -83,7 +83,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="设置" id="SLv-W4-u0k">
+                                    <barButtonItem title="设置" id="SLv-W4-u0k" customClass="OtherBarButtonItem">
                                         <connections>
                                             <action selector="settingbtnClick:" destination="AaI-Yz-Fzo" id="HOm-y9-7fg"/>
                                         </connections>
@@ -180,7 +180,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="back" destination="Aku-50-q2W" id="OLw-XA-eT5"/>
                         <outlet property="connectbtn" destination="GQk-VE-5uJ" id="MRf-qv-7M8"/>
+                        <outlet property="lblIP" destination="Hg2-vQ-Oj9" id="KIT-4o-rJJ"/>
+                        <outlet property="lblPort" destination="bHW-Ax-w9V" id="maJ-2p-N3b"/>
                         <outlet property="toolbar" destination="R3h-PJ-dB8" id="CtN-Rn-PB8"/>
                         <outlet property="txtIP" destination="nh8-Sd-cya" id="m0g-c6-U16"/>
                         <outlet property="txtPort" destination="0a4-ul-Oo0" id="e9T-Kp-UnV"/>
@@ -246,7 +249,7 @@
                                 <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="设置" id="8ab-a8-eqX">
+                                    <barButtonItem title="设置" id="8ab-a8-eqX" customClass="OtherBarButtonItem">
                                         <connections>
                                             <action selector="settingbtnClick:" destination="Mjs-CX-TM9" id="UPw-eA-uDH"/>
                                         </connections>
@@ -349,7 +352,7 @@
                                 <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="设置" id="g5k-Dj-1a5">
+                                    <barButtonItem title="设置" id="g5k-Dj-1a5" customClass="OtherBarButtonItem">
                                         <connections>
                                             <action selector="settingbtnClick:" destination="0Th-5C-TZO" id="fzN-Cr-vow"/>
                                         </connections>

@@ -124,18 +124,22 @@
     }
 }
 - (IBAction)onbtnClick:(id)sender {
+       [self MyLog:@"onbtnClick"];
      [mApp control_toggle:FLAG_UI_RGB LightNo:0 LightState:YES];
 }
 
 - (IBAction)offbtnClick:(id)sender {
+        [self MyLog:@"offbtnClick"];
      [mApp control_toggle:FLAG_UI_RGB LightNo:0 LightState:NO];
 }
 
 - (IBAction)brightUp:(id)sender {
+      [self MyLog:@"brightUp"];
     [mApp control_bright_dark:FLAG_FUNCTION_BRIGHTUP];
 }
 
 - (IBAction)brightDown:(id)sender {
+        [self MyLog:@"brightDown"];
      [mApp control_bright_dark:FLAG_FUNCTION_BRIGHTDOWN];
 }
 
