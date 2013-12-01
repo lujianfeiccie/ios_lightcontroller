@@ -30,6 +30,8 @@
 {
     [super viewDidLoad];
     [self MyLog:@"viewDidLoad"];
+    
+    mApp=[[UIApplication sharedApplication] delegate];
     // Do any additional setup after loading the view from its nib.
     _twokeybtn1.delegate = self;
     _twokeybtn2.delegate = self;
@@ -39,11 +41,11 @@
     
     
    
+    
      UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
     [self.view addSubview:customBackground];
     [self.view sendSubviewToBack:customBackground];
-    
-    mApp=[[UIApplication sharedApplication] delegate];
+
     [mApp addDelegateForViewDidAppear: self];
 }
 
@@ -90,14 +92,6 @@
      [mApp control_toggle:FLAG_UI_COLOR LightNo:0 LightState:NO];
 }
 
-- (IBAction)settingbtnClick:(id)sender {
-   // NSLog(@"settingclick");
-        // 获取故事板中某个View
-    UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"pagesetting"];
-    
-    [[mApp navController] pushViewController:next animated:YES];
-
-}
 /*
 - (IBAction)settingbtnClick:(id)sender {
     // 获取故事板

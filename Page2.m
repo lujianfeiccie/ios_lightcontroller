@@ -143,11 +143,6 @@
      [mApp control_bright_dark:FLAG_FUNCTION_BRIGHTDOWN];
 }
 
-- (IBAction)settingbtnClick:(id)sender {
-    UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"pagesetting"];
-    [[mApp navController] pushViewController:next animated:YES];
-}
-
 -(void) onMyViewDidAppear{
     [self MyLog:@"viewDidAppear"];
     if(iPhone5){

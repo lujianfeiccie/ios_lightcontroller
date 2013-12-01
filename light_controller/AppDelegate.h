@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AsyncSocket.h"
+#import "UserInfo.h"
 #import "Protocol.h"
 #import"Constant.h"
-#define LOG_DEBUG
+#import "SqlHelper.h"
+//#define LOG_DEBUG
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 //接口定义
@@ -36,6 +38,8 @@
     id<MyScrollPageDelegate> delegateForScrollPage;
     UIStoryboard *storyBoard;
     NSMutableArray* delegateList;
+    SqlHelper *sqlhelper;
+    UserInfo* userinfo_connecting;//保存一个正在连接的信息
 }
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController *navController;
@@ -57,4 +61,8 @@
 - (void)addDelegateForViewDidAppear:(id<MyViewDidAppearDelegate>)delegateForViewDidAppear;
 - (void)removeDelegateForViewDidAppear:(id<MyViewDidAppearDelegate>)delegateForViewDidAppear;
 - (void)notifyToViewDidAppear;
+- (void)saveConnectInfo: (UserInfo*) userInfo;
+- (UserInfo*)loadConnectInfo;
+-(SqlHelper*) getdb;
+- (UserInfo*) getConnectingInfo;
 @end

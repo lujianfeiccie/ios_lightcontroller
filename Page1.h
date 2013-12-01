@@ -15,6 +15,7 @@
 @interface Page1 : UIViewController<TwoKeyButtonDelegate,FourKeyButtonDelegate
 ,MyViewDidAppearDelegate>{
     AppDelegate *mApp;
+   
 }
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn1;
 @property (weak, nonatomic) IBOutlet TwoKeyButton *twokeybtn2;
@@ -24,8 +25,6 @@
 - (IBAction)middleButtonClick:(id)sender;
 - (IBAction)onbtnClick:(id)sender;
 - (IBAction)offbtnClick:(id)sender;
-- (IBAction)settingbtnClick:(id)sender;
-
 
 @property (weak, nonatomic) IBOutlet FourKeyButton *fourkeybtn;
 @end

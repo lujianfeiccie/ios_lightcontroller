@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 - (IBAction)onbtnClick:(id)sender;
 - (IBAction)offbtnClick:(id)sender;
-- (IBAction)settingbtnClick:(id)sender;
 - (IBAction)night_modeClick:(id)sender;
 - (IBAction)meeting_modeClick:(id)sender;
 - (IBAction)reading_modeClick:(id)sender;

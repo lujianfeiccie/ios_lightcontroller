@@ -9,17 +9,35 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "OtherLabel.h"
-@interface PageSetting : UIViewController<MyAsyncSocketDelegate,MyViewDidAppearDelegate>{
+#import "OtherTextField.h"
+
+//跳转界面类型
+typedef enum {
+    TypeAdd, //添加数据
+    TypeEdit, //编辑数据
+    TypeOK,  //确认
+    TypeCancel //取消
+} TypeJump;
+@protocol PageSettingDelegate <NSObject>
+-(void) onPageSettingResult: (UserInfo*) userinfo : (TypeJump) typejump;
+@end
+
+@interface PageSetting : UIViewController<MyViewDidAppearDelegate,
+UITextFieldDelegate>{
     AppDelegate *mApp;
+    int offset;//键盘上移偏移量
 }
-- (IBAction)backbtnClick:(id)sender;
+- (void)backbtnClick;
 - (IBAction)connectbtnClick:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextField *txtIP;
-@property (weak, nonatomic) IBOutlet UITextField *txtPort;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *connectbtn;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *back;
+- (void)savebtnClick;
+-(IBAction)textfieldTouchUpOutside:(id)sender;
+@property UserInfo* userinfo;
+@property TypeJump typejump;
+@property (weak, nonatomic) IBOutlet OtherTextField *txtIP;
+@property (weak, nonatomic) IBOutlet OtherTextField *txtPort;
+@property (weak, nonatomic) IBOutlet OtherTextField *txtName;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet OtherLabel *lblIP;
 @property (weak, nonatomic) IBOutlet OtherLabel *lblPort;
-
+@property id<PageSettingDelegate> delegate;
 @end

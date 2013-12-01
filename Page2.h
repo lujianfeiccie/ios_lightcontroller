@@ -26,7 +26,4 @@ MyViewDidAppearDelegate>
 - (IBAction)offbtnClick:(id)sender;
 - (IBAction)brightUp:(id)sender;
 - (IBAction)brightDown:(id)sender;
-- (IBAction)settingbtnClick:(id)sender;
-
-
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 extern NSInteger const NUM_OF_PAGES;
+extern NSInteger const IOS_PLATFORM_Y_OFFSET;
 extern NSString* const BACKGROUND_IMAGE;
 extern NSString* const STRING_TABLE;
 @interface Constant : NSObject

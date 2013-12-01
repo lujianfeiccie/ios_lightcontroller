@@ -22,11 +22,11 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    if(iPhone5){
+   /* if(iPhone5){
         storyBoard=[UIStoryboard storyboardWithName:@"MainiPhone5" bundle:nil];
-    }else{
+    }else{*/
         storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    }
+    //}
     
     //[self MyLog:[NSString stringWithFormat:@"%f",[[[UIDevice currentDevice] systemVersion] floatValue]]];
     [self MyLog:[NSString stringWithFormat:@"%f",IOS_VERSION]];
@@ -34,14 +34,13 @@
     self.navController = [[UINavigationController alloc] init];
     [self.navController pushViewController:rootView animated:YES];
     [self.navController setToolbarHidden:YES];//底部隐藏
-    [self.navController setNavigationBarHidden:YES];//顶部 隐藏
+   // [self.navController setNavigationBarHidden:NO];//顶部 隐藏
     [self.window addSubview:self.navController.view];
     [self.window makeKeyAndVisible];
     
     asyncSocket = [[AsyncSocket alloc] initWithDelegate:self];
     isConnecting = NO;
     isConnectedWithError = NO;
-    
     
     return YES;
 }
@@ -55,6 +54,11 @@
 - (Boolean)Connect:(NSString*) serverIp :(NSUInteger) port{
     NSError *err = nil;
     Boolean result;
+    if (userinfo_connecting==nil) {
+        userinfo_connecting = [[UserInfo alloc]init];
+    }
+    userinfo_connecting._ip = serverIp;
+    userinfo_connecting._port = [NSString stringWithFormat:@"%i",port];
     @try {
          result = [asyncSocket connectToHost:serverIp onPort:port error:&err];
     }
@@ -96,10 +100,16 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [self MyLog:@"applicationDidBecomeActive"];
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];//读取用户信息
-    NSData* udObject = [ud objectForKey:@"UserInfo"];
-    UserInfo* mUserInfo = [NSKeyedUnarchiver unarchiveObjectWithData:udObject] ;
+    if (sqlhelper==Nil) {
+        sqlhelper = [[SqlHelper alloc] init];
+        [sqlhelper createOrOpenDatabase];
+        [sqlhelper createTables];
+    }
+    [[sqlhelper getDB] close];
+    UserInfo* mUserInfo = [self loadConnectInfo];
+    
     if(mUserInfo!=Nil){
+          userinfo_connecting = mUserInfo;
         [self Connect:mUserInfo._ip :[mUserInfo._port intValue]];
     }
 }
@@ -311,6 +321,25 @@
     for (id<MyViewDidAppearDelegate> temp in delegateList) {
         [temp onMyViewDidAppear];
     }
+}
+- (void)saveConnectInfo: (UserInfo*) userInfo
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSData *udObject = [NSKeyedArchiver archivedDataWithRootObject:userInfo];
+    [ud setObject:udObject forKey:@"UserInfo"];
+}
+- (UserInfo*)loadConnectInfo
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];//读取用户信息
+    NSData* udObject = [ud objectForKey:@"UserInfo"];
+    UserInfo* mUserInfo = [NSKeyedUnarchiver unarchiveObjectWithData:udObject] ;
+    return mUserInfo;
+}
+-(SqlHelper*) getdb{
+    return  sqlhelper;
+}
+- (UserInfo*) getConnectingInfo{
+    return userinfo_connecting;
 }
 -(void) MyLog: (NSString*) msg{
 #if defined(LOG_DEBUG)

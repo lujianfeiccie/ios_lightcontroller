@@ -58,10 +58,6 @@
     [mApp control_toggle:FLAG_UI_MODE LightNo:0 LightState:NO];
 }
 
-- (IBAction)settingbtnClick:(id)sender {
-    UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"pagesetting"];
-    [[mApp navController] pushViewController:next animated:YES];
-}
 
 - (IBAction)night_modeClick:(id)sender {
     [self MyLog:@"night_modeClick"];

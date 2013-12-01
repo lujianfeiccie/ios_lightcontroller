@@ -8,6 +8,7 @@
 
 #import "Constant.h"
 NSInteger const NUM_OF_PAGES=3;
+NSInteger const IOS_PLATFORM_Y_OFFSET=20;
 NSString* const BACKGROUND_IMAGE=@"back.png";
 NSString* const STRING_TABLE=@"mystring";
 @implementation Constant

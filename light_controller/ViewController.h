@@ -12,4 +12,5 @@
 {
     AppDelegate *mApp;
 }
+-(void) settingbtnClick;
 @end

@@ -25,6 +25,19 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [self buildLayout];
     [self MyLog:@"viewdidload"];
+    
+    //加入设置按钮
+    UIBarButtonItem *barsesttingButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Public_Setting", STRING_TABLE, nil)style:UIBarButtonItemStyleBordered target:self action:@selector(settingbtnClick)];
+    self.navigationItem.leftBarButtonItem = barsesttingButton;
+}
+
+
+-(void) settingbtnClick{
+    // NSLog(@"settingclick");
+    // 获取故事板中某个View
+    UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"settinglist"];
+    
+    [[mApp navController] pushViewController:next animated:YES];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -99,7 +112,7 @@
 {
     if (!_m_pageC)
     {
-        NSInteger heightOffset = 30;
+        NSInteger heightOffset = 70;
        /* if (iPhone5) {
             heightOffset = 50;
         }*/

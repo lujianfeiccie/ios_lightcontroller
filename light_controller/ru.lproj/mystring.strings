@@ -13,9 +13,16 @@
 "PageSetting_Connect"="Connect";
 "PageSetting_Disconnect"="Disconnect";
 "PageSetting_Tips"="Tips";
-"PageSetting_Ip_Port_Tips"="IP and Port can not be empty!";
+"PageSetting_Ip_Port_Tips"="IP,Port and Name can not be empty!";
 "PageSetting_Input_Invalid"="Input invalid!";
 "PageSetting_OK"="OK";
 "PageSetting_Connect_Successfully"="Connect successfully!";
 "PageSetting_Connect_Failed"="Connect failed!";
 "PageSetting_Disconnect_Successfully"="Disconnect successfully!";
+
+"SettingList_Add"="Add";
+"SettingList_Connect"="Connect";
+"SettingList_Edit"="Edit";
+"SettingList_Delete"="Delete";
+"SettingList_Cancel"="Cancel";
+"SettingList_CurrentlyConnected"="Is Connecting! wanna disconnect? ";
