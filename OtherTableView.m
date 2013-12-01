@@ -14,7 +14,10 @@
       self = [super initWithCoder:aDecoder];
     // Initialization code
     if(IOS_VERSION<7){
-        CGAffineTransform translate=CGAffineTransformMakeTranslation(0, -IOS_PLATFORM_Y_OFFSET);//上移20像素
+        CGAffineTransform translate=CGAffineTransformMakeTranslation(0, IOS_PLATFORM_Y_OFFSET);//上移20像素
+        self.transform=translate;
+    }else{
+         CGAffineTransform translate=CGAffineTransformMakeTranslation(0, IOS_PLATFORM_Y_OFFSET);//上移20像素
         self.transform=translate;
     }
     return self;

@@ -22,10 +22,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         // Initialization code
-        if(IOS_VERSION<7){
-            CGAffineTransform translate=CGAffineTransformMakeTranslation(0, -IOS_PLATFORM_Y_OFFSET);//上移20像素
-            self.transform=translate;
-        }
+        [OtherTool adjustUI:self];
     }
     return self;
 }

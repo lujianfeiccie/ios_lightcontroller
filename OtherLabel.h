@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 @interface OtherLabel : UILabel
-
+@property NSInteger type;
 @end

@@ -60,10 +60,7 @@
     
      mApp=[[UIApplication sharedApplication] delegate];//用于通知主界面禁用/恢复手势
     
-    if(IOS_VERSION<7){
-        CGAffineTransform translate=CGAffineTransformMakeTranslation(0, -20);//上移20像素
-        self.transform=translate;
-    }
+     [OtherTool adjustUI:self];
     return self;
 }
 - (void) setCenterButtonBG:(NSString*) imageName{

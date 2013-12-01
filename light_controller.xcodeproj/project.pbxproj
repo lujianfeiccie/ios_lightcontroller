@@ -83,6 +83,7 @@
 		18EBCC061805B304005ED434 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18EBCC051805B304005ED434 /* icon.png */; };
 		18F3571D184AE91600A59765 /* OtherTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3571C184AE91600A59765 /* OtherTableView.m */; };
 		18F35720184B306D00A59765 /* CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3571F184B306D00A59765 /* CustomAlertView.m */; };
+		18F35724184B6A4000A59765 /* OtherTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F35723184B6A4000A59765 /* OtherTool.m */; };
 		18F981131804361600FFE3A4 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F981121804361600FFE3A4 /* back.png */; };
 		18F981241804510D00FFE3A4 /* TwoKeyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F981231804510D00FFE3A4 /* TwoKeyButton.m */; };
 		18FC728C18083F360027B05E /* off.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FC728A18083F360027B05E /* off.png */; };
@@ -214,6 +215,8 @@
 		18F3571C184AE91600A59765 /* OtherTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTableView.m; sourceTree = "<group>"; };
 		18F3571E184B306D00A59765 /* CustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlertView.h; sourceTree = "<group>"; };
 		18F3571F184B306D00A59765 /* CustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlertView.m; sourceTree = "<group>"; };
+		18F35722184B6A4000A59765 /* OtherTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTool.h; sourceTree = "<group>"; };
+		18F35723184B6A4000A59765 /* OtherTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTool.m; sourceTree = "<group>"; };
 		18F981121804361600FFE3A4 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		18F981221804510D00FFE3A4 /* TwoKeyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoKeyButton.h; sourceTree = "<group>"; };
 		18F981231804510D00FFE3A4 /* TwoKeyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoKeyButton.m; sourceTree = "<group>"; };
@@ -284,6 +287,7 @@
 		18C7AD7F1802BFEB00F62819 = {
 			isa = PBXGroup;
 			children = (
+				18F35721184B6A1A00A59765 /* Util */,
 				1892E69C1847810C009A3255 /* FMDB */,
 				1892E69818477DEE009A3255 /* database */,
 				18CFBFB018099820001511D7 /* SVProgressHUD */,
@@ -405,6 +409,15 @@
 				18CFBFB318099820001511D7 /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		18F35721184B6A1A00A59765 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				18F35722184B6A4000A59765 /* OtherTool.h */,
+				18F35723184B6A4000A59765 /* OtherTool.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		18F981111804361600FFE3A4 /* images */ = {
@@ -644,6 +657,7 @@
 				18F3571D184AE91600A59765 /* OtherTableView.m in Sources */,
 				18CF26E51806DDF400F1053F /* CircleButton.m in Sources */,
 				18FC72941808440D0027B05E /* PageSetting.m in Sources */,
+				18F35724184B6A4000A59765 /* OtherTool.m in Sources */,
 				18C7AD9C1802BFEC00F62819 /* AppDelegate.m in Sources */,
 				18D9F71F180A33AF009B0CF0 /* Protocol.m in Sources */,
 				18FC729E1808578B0027B05E /* RegexKitLite.m in Sources */,

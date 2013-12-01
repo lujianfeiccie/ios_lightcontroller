@@ -12,7 +12,8 @@
 #import "Protocol.h"
 #import"Constant.h"
 #import "SqlHelper.h"
-//#define LOG_DEBUG
+#import "OtherTool.h"
+#define LOG_DEBUG
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 //接口定义

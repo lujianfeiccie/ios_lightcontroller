@@ -113,6 +113,11 @@
     if (!_m_pageC)
     {
         NSInteger heightOffset = 70;
+        if(IOS_VERSION<7){
+            heightOffset = 70;
+        }else{
+            heightOffset = 35;
+        }
        /* if (iPhone5) {
             heightOffset = 50;
         }*/

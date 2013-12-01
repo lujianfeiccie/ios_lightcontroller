@@ -22,11 +22,13 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-   /* if(iPhone5){
+    if(iPhone5){
         storyBoard=[UIStoryboard storyboardWithName:@"MainiPhone5" bundle:nil];
-    }else{*/
+        [self MyLog:@"iPhone5"];
+    }else{
         storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //}
+        [self MyLog:@"not iPhone5"];
+    }
     
     //[self MyLog:[NSString stringWithFormat:@"%f",[[[UIDevice currentDevice] systemVersion] floatValue]]];
     [self MyLog:[NSString stringWithFormat:@"%f",IOS_VERSION]];
@@ -35,6 +37,7 @@
     [self.navController pushViewController:rootView animated:YES];
     [self.navController setToolbarHidden:YES];//底部隐藏
    // [self.navController setNavigationBarHidden:NO];//顶部 隐藏
+    self.navController.navigationBar.backgroundColor = [OtherTool hexStringToColor:@"#000000"];
     [self.window addSubview:self.navController.view];
     [self.window makeKeyAndVisible];
     

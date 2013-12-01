@@ -23,10 +23,7 @@
     
     [self addTarget:self action:@selector(butonPress) forControlEvents:UIControlEventTouchUpInside];
 
-    if(IOS_VERSION<7){
-       CGAffineTransform translate=CGAffineTransformMakeTranslation(0, -20);//上移20像素
-       self.transform=translate;
-    }
+    [OtherTool adjustUI:self];
     return self;
 }
 // Only override drawRect: if you perform custom drawing.
