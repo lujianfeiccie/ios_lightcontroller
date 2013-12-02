@@ -37,7 +37,9 @@
     [self.navController pushViewController:rootView animated:YES];
     [self.navController setToolbarHidden:YES];//底部隐藏
    // [self.navController setNavigationBarHidden:NO];//顶部 隐藏
-    self.navController.navigationBar.backgroundColor = [OtherTool hexStringToColor:@"#000000"];
+   // self.navController.navigationBar.backgroundColor = [OtherTool //hexStringToColor:@"#000000"];
+    //[[self.navController.navigationBar] setBackgroundImage:[UIImage //imageNamed:@"small_circle.png"]];
+    [self.navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"title_bar.png"] forBarMetrics:UIBarMetricsDefault];
     [self.window addSubview:self.navController.view];
     [self.window makeKeyAndVisible];
     

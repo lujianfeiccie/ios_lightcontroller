@@ -33,6 +33,11 @@
     [self MyLog:@"viewDidLoad"];
      mApp =[[UIApplication sharedApplication] delegate];
      mApp.delegate = self;
+    
+    //初始化背景
+    UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
+    [self.view addSubview:customBackground];
+    [self.view sendSubviewToBack:customBackground];
 	// Do any additional setup after loading the view.
   //  NSMutableArray *tmpImageArray = [[NSMutableArray alloc] init];
    // [tmpImageArray addObject:@"wokao"];

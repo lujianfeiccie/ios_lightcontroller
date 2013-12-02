@@ -45,6 +45,12 @@
         [self MyLog:@"viewDidLoad"];
 	// Do any additional setup after loading the view.
     mApp =[[UIApplication sharedApplication] delegate];
+    
+    //初始化背景
+    UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
+    [self.view addSubview:customBackground];
+    [self.view sendSubviewToBack:customBackground];
+
    
     self.txtName.delegate = self;//处理键盘挡住textfield的情况
     switch (typejump) { //判断消息类型

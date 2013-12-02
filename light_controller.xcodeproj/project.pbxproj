@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1853DF7418437E8E00C1FDC9 /* mystring.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1853DF7618437E8E00C1FDC9 /* mystring.strings */; };
+		1864335F184CD0430054F519 /* title_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1864335E184CD0430054F519 /* title_bar.png */; };
 		186F3C70181D4EAB00A56CD6 /* MainiPhone5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186F3C6F181D4EAB00A56CD6 /* MainiPhone5.storyboard */; };
 		188655541809A47D00035915 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 188655531809A47D00035915 /* UserInfo.m */; };
 		1892E69018477037009A3255 /* SettingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1892E68F18477037009A3255 /* SettingList.m */; };
@@ -112,6 +113,7 @@
 		1853DF7518437E8E00C1FDC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/mystring.strings; sourceTree = "<group>"; };
 		1853DF7718437E9700C1FDC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/mystring.strings; sourceTree = "<group>"; };
 		1853DF7818437E9900C1FDC9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/mystring.strings; sourceTree = "<group>"; };
+		1864335E184CD0430054F519 /* title_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_bar.png; sourceTree = "<group>"; };
 		186F3C6F181D4EAB00A56CD6 /* MainiPhone5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainiPhone5.storyboard; sourceTree = "<group>"; };
 		188655521809A47D00035915 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		188655531809A47D00035915 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 		18F981111804361600FFE3A4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1864335E184CD0430054F519 /* title_bar.png */,
 				18FC728E180840BE0027B05E /* bright_down.png */,
 				18FC728F180840BE0027B05E /* bright_up.png */,
 				18FC728A18083F360027B05E /* off.png */,
@@ -610,6 +613,7 @@
 				18CF26ED1806FC4700F1053F /* center_g.png in Resources */,
 				18CF26EE1806FC4700F1053F /* center_r.png in Resources */,
 				18EBCBF41805A886005ED434 /* btn_on4.png in Resources */,
+				1864335F184CD0430054F519 /* title_bar.png in Resources */,
 				18C274BB18057A1E0051F64C /* four.png in Resources */,
 				18FC7290180840BE0027B05E /* bright_down.png in Resources */,
 				18FC728C18083F360027B05E /* off.png in Resources */,
