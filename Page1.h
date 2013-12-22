@@ -12,8 +12,7 @@
 #import "AppDelegate.h"
 
 
-@interface Page1 : UIViewController<TwoKeyButtonDelegate,FourKeyButtonDelegate
-,MyViewDidAppearDelegate>{
+@interface Page1 : UIViewController<TwoKeyButtonDelegate,FourKeyButtonDelegate>{
     AppDelegate *mApp;
    
 }

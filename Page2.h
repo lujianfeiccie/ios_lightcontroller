@@ -11,8 +11,7 @@
 #import "CircleButton.h"
 #import "AppDelegate.h"
 @interface Page2 : UIViewController<TwoKeyButtonDelegate,
-CircleButtonDelegate,
-MyViewDidAppearDelegate>
+CircleButtonDelegate>
 {
     AppDelegate *mApp;
 }

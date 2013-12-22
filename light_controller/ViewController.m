@@ -11,7 +11,7 @@
 #import "Page1.h"
 #import "Page2.h"
 #import "Page3.h"
-
+#import "OtherTool.h"
 @interface ViewController ()
 @property (nonatomic,strong)UIScrollView *m_sc;//滚动视图
 @property (nonatomic,strong)UIPageControl *m_pageC;//滚动指示器
@@ -27,8 +27,9 @@
     [self MyLog:@"viewdidload"];
     
     //加入设置按钮
-    UIBarButtonItem *barsesttingButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Public_Setting", STRING_TABLE, nil)style:UIBarButtonItemStyleBordered target:self action:@selector(settingbtnClick)];
-    self.navigationItem.leftBarButtonItem = barsesttingButton;
+    UIBarButtonItem *barsettingButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Public_Setting", STRING_TABLE, nil) style:UIBarButtonItemStyleBordered target:self action:@selector(settingbtnClick)];
+    [OtherTool setToolBarBtn:barsettingButton];
+    self.navigationItem.leftBarButtonItem = barsettingButton;
 }
 
 
@@ -38,13 +39,6 @@
     UIViewController *next = [[self storyboard] instantiateViewControllerWithIdentifier:@"settinglist"];
     
     [[mApp navController] pushViewController:next animated:YES];
-}
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self MyLog:@"viewDidAppear"];
-    if(mApp!=nil){
-    [mApp notifyToViewDidAppear];
-    }
 }
 
 -(void)buildLayout
@@ -93,7 +87,7 @@
         [_m_sc addSubview:page2.view];//加入到ScrollView
         
         //第三页
-        Page3* page3 = [board instantiateViewControllerWithIdentifier:@"page3"];
+       Page3* page3 = [board instantiateViewControllerWithIdentifier:@"page3"];
         page3.view.frame =CGRectMake(self.view.bounds.size.width * 2,0 , self.view.bounds.size.width,
                                      self.view.bounds.size.height);
         page3.view.backgroundColor = [UIColor blackColor];
@@ -113,14 +107,12 @@
     if (!_m_pageC)
     {
         NSInteger heightOffset = 70;
-        if(IOS_VERSION<7){
-            heightOffset = 70;
-        }else{
-            heightOffset = 35;
-        }
-       /* if (iPhone5) {
+               /* if (iPhone5) {
             heightOffset = 50;
         }*/
+        if (IsIOS7) {
+            heightOffset = 90;
+        }
         _m_pageC = [[UIPageControl alloc]initWithFrame:CGRectMake(60,self.view.frame.size.height-heightOffset,200,30)];//页面控制条区域
         
         [self MyLog:[NSString stringWithFormat:@"viewheight:%f",self.view.frame.size.height]];

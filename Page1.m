@@ -39,16 +39,17 @@
     _twokeybtn4.delegate = self;
     _fourkeybtn.delegate = self;
     
-    
+    [self MyLog:[NSString stringWithFormat:@"width=%f height=%f",self.view.frame.size.width,self.view.frame.size.height]];
    
     
      UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
     [self.view addSubview:customBackground];
     [self.view sendSubviewToBack:customBackground];
 
-    [mApp addDelegateForViewDidAppear: self];
 }
-
+-(void) viewDidLayoutSubviews{
+    [OtherTool adjustUI_ForScreenSize:self.view];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

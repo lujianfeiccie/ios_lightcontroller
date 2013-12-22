@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TwoKeyButton.h"
 #import "AppDelegate.h"
-@interface Page3 : UIViewController<TwoKeyButtonDelegate,MyViewDidAppearDelegate>
+@interface Page3 : UIViewController<TwoKeyButtonDelegate>
 {
     AppDelegate *mApp;
 }

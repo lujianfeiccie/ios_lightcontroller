@@ -23,7 +23,6 @@
     
     [self addTarget:self action:@selector(butonPress) forControlEvents:UIControlEventTouchUpInside];
 
-    [OtherTool adjustUI:self];
     return self;
 }
 // Only override drawRect: if you perform custom drawing.

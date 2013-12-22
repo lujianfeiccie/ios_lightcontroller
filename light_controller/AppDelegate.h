@@ -27,9 +27,7 @@
 @required
 -(void)onPageScrollEnable: (Boolean) enable;
 @end
-@protocol MyViewDidAppearDelegate <NSObject>
--(void) onMyViewDidAppear;
-@end
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate,AsyncSocketDelegate>
 {
     AsyncSocket *asyncSocket;
@@ -48,7 +46,6 @@
 @property id<MyScrollPageDelegate> delegateForScrollPage;
 @property Boolean isConnecting;
 @property (strong, nonatomic) UIStoryboard *storyBoard;
-@property id<MyViewDidAppearDelegate> delegateForViewDidAppear;
 - (Boolean)Connect:(NSString*) serverIp :(NSUInteger) port;
 - (void)Disconnect;
 - (void)write :(Byte*) data Size:(NSInteger) size;
@@ -59,9 +56,6 @@
 - (void)control_bright_dark:(Byte) status;
 - (void)control_rgb:(Byte) colorValue;
 - (void)notifyToEnableScrollPage: (Boolean) enable;
-- (void)addDelegateForViewDidAppear:(id<MyViewDidAppearDelegate>)delegateForViewDidAppear;
-- (void)removeDelegateForViewDidAppear:(id<MyViewDidAppearDelegate>)delegateForViewDidAppear;
-- (void)notifyToViewDidAppear;
 - (void)saveConnectInfo: (UserInfo*) userInfo;
 - (UserInfo*)loadConnectInfo;
 -(SqlHelper*) getdb;

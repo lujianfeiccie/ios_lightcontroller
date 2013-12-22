@@ -66,17 +66,16 @@
             break;
     }
     
-    UIButton *backButton = [UIButton buttonWithType:101];//左箭头样式
-    [backButton addTarget:self action:@selector(backbtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setTitle:NSLocalizedStringFromTable(@"PageSetting_Back", STRING_TABLE, nil) forState:UIControlStateNormal];
     //加入返回按钮
-    UIBarButtonItem *barbackButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = barbackButton;
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"PageSetting_Back", STRING_TABLE, nil) style:UIBarButtonItemStyleBordered target:self action:@selector(backbtnClick)];
+    [OtherTool setToolBarBtn:backButton];
+    self.navigationItem.leftBarButtonItem = backButton;
     
     //加入ok按钮
-    UIBarButtonItem *barokButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savebtnClick)];
-    self.navigationItem.rightBarButtonItem = barokButton;
-    
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"ok" style:UIBarButtonItemStyleBordered target:self action:@selector(savebtnClick)];
+    [OtherTool setToolBarBtn:saveButton];
+    self.navigationItem.rightBarButtonItem = saveButton;
+
     //点击别处隐藏keyboard的事件
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textfieldTouchUpOutside:)];
     [self.view addGestureRecognizer:singleTap];
@@ -87,7 +86,6 @@
     }
     [self UpdateUI_forDisconnect];*/
     
-    [mApp addDelegateForViewDidAppear: self];
     
     //语言本地化
     self.lblIP.text = NSLocalizedStringFromTable(@"PageSetting_IP", STRING_TABLE,nil);

@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "OtherLabel.h"
-#import "OtherTextField.h"
 
 //跳转界面类型
 typedef enum {
@@ -22,7 +20,7 @@ typedef enum {
 -(void) onPageSettingResult: (UserInfo*) userinfo : (TypeJump) typejump;
 @end
 
-@interface PageSetting : UIViewController<MyViewDidAppearDelegate,
+@interface PageSetting : UIViewController<
 UITextFieldDelegate>{
     AppDelegate *mApp;
     int offset;//键盘上移偏移量
@@ -33,11 +31,11 @@ UITextFieldDelegate>{
 -(IBAction)textfieldTouchUpOutside:(id)sender;
 @property UserInfo* userinfo;
 @property TypeJump typejump;
-@property (weak, nonatomic) IBOutlet OtherTextField *txtIP;
-@property (weak, nonatomic) IBOutlet OtherTextField *txtPort;
-@property (weak, nonatomic) IBOutlet OtherTextField *txtName;
+@property (weak, nonatomic) IBOutlet UITextField *txtIP;
+@property (weak, nonatomic) IBOutlet UITextField *txtPort;
+@property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
-@property (weak, nonatomic) IBOutlet OtherLabel *lblIP;
-@property (weak, nonatomic) IBOutlet OtherLabel *lblPort;
+@property (weak, nonatomic) IBOutlet UILabel *lblIP;
+@property (weak, nonatomic) IBOutlet UILabel *lblPort;
 @property id<PageSettingDelegate> delegate;
 @end

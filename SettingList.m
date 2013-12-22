@@ -38,31 +38,19 @@
     UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
     [self.view addSubview:customBackground];
     [self.view sendSubviewToBack:customBackground];
-	// Do any additional setup after loading the view.
-  //  NSMutableArray *tmpImageArray = [[NSMutableArray alloc] init];
-   // [tmpImageArray addObject:@"wokao"];
-   /* for (int i=0; i<[dictionary count]; i++) {
-        NSString *key = [[NSString alloc] initWithFormat:@"%i", i+1];
-        NSDictionary *tmpDic = [dictionary objectForKey:key];
-        [tmpDataArray addObject:tmpDic];
-        
-        NSString *imageUrl = [[NSString alloc] initWithFormat:@"%i.png", i+1];
-        UIImage *image = [UIImage imageNamed:imageUrl];
-        [tmpImageArray addObject:image];
-    }*/
-    //self.datalist = [[NSMutableArray alloc]init];
+	
 
-    UIButton *backButton = [UIButton buttonWithType:101];//左箭头样式
-    [backButton addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setTitle:NSLocalizedStringFromTable(@"PageSetting_Back", STRING_TABLE, nil) forState:UIControlStateNormal];
     //加入返回按钮
-    UIBarButtonItem *barbackButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = barbackButton;
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"PageSetting_Back", STRING_TABLE, nil) style:UIBarButtonItemStyleBordered target:self action:@selector(backClick)];
+    [OtherTool setToolBarBtn:backButton];
+    self.navigationItem.leftBarButtonItem = backButton;
     
-    //加入添加按钮
-    UIBarButtonItem *baraddButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addClick)];
-    self.navigationItem.rightBarButtonItem = baraddButton;
-
+    //加入返回按钮
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Add"
+        style:UIBarButtonItemStyleBordered target:self action:@selector(addClick)];
+    [OtherTool setToolBarBtn:addButton];
+    self.navigationItem.rightBarButtonItem = addButton;
+    
     [[[mApp getdb] getDB] open];
     self.datalist =[[mApp getdb] getlist];
     [[[mApp getdb] getDB] close];
@@ -71,6 +59,12 @@
     tableview.dataSource = self;
 }
 
+-(void) viewDidLayoutSubviews{
+    [tableview setFrame:CGRectMake(tableview.frame.origin.x,
+                                  tableview.frame.origin.y,
+                                  self.view.frame.size.width,
+                                  self.view.frame.size.height)];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -36,9 +36,11 @@
     UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
     [self.view addSubview:customBackground];
     [self.view sendSubviewToBack:customBackground];
-      [mApp addDelegateForViewDidAppear: self];
+     
 }
-
+-(void) viewDidLayoutSubviews{
+    [OtherTool adjustUI_ForScreenSize:self.view];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

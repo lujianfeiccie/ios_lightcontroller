@@ -39,7 +39,7 @@
     UIImageView *customBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:BACKGROUND_IMAGE]];
     [self.view addSubview:customBackground];
     [self.view sendSubviewToBack:customBackground];
-       [mApp addDelegateForViewDidAppear: self];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,7 +47,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void) viewDidLayoutSubviews{
+    [OtherTool adjustUI_ForScreenSize:self.view];
+}
 -(void)onTwoKeyButtonClick:(NSInteger) btnID :(Boolean) enable{
     [self MyLog:[NSString stringWithFormat:@"onTwoKeyButtonClick btnID %i enable %i",btnID,enable]];
     [mApp control_toggle:FLAG_UI_RGB LightNo:btnID LightState:enable];

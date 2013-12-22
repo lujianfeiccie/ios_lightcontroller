@@ -60,7 +60,6 @@
     
      mApp=[[UIApplication sharedApplication] delegate];//用于通知主界面禁用/恢复手势
     
-     [OtherTool adjustUI:self];
     return self;
 }
 - (void) setCenterButtonBG:(NSString*) imageName{

@@ -45,18 +45,34 @@
                            alpha:1.0f];
 }
 +(void)adjustUI:(UIView*) view{
-    if(IOS_VERSION<7){
-        CGAffineTransform translate=CGAffineTransformMakeTranslation(0, IOS_PLATFORM_Y_OFFSET);//上移20像素
-        view.transform=translate;
-    }else{
-        if (iPhone5) {
-            CGAffineTransform translate=CGAffineTransformMakeTranslation(0, IOS7_IPHONE5_PLATFORM_Y_OFFSET);//上移20像素
-            view.transform=translate;
-        }else{
-            CGAffineTransform translate=CGAffineTransformMakeTranslation(0,IOS7_PLATFORM_Y_OFFSET);//上移20像素
-            view.transform=translate;
+    [view setFrame:CGRECT_HAVE_NAV(view.frame.origin.x,
+                                   view.frame.origin.y,
+                                   view.frame.size.width,
+                                   view.frame.size.height)];
+}
++(void)adjustUI_HaveNoNav:(UIView*) view{
+    [view setFrame:CGRECT_NO_NAV(view.frame.origin.x,
+                                   view.frame.origin.y,
+                                   view.frame.size.width,
+                                   view.frame.size.height)];
+}
++ (void) setToolBarBtn:(UIBarButtonItem*) btn{
+    [btn setBackgroundImage:[UIImage imageNamed:@"toolbar_btn.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    [btn setBackgroundImage:[UIImage imageNamed:@"toolbar_btn_s.png"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
+    
+    [btn setTintColor:[UIColor whiteColor]];
+}
++(void)adjustUI_ForScreenSize:(UIView*) view{
+    if(iPhone5){
+        for (UIView *obj in view.subviews) {
+            CGFloat y = (CGFloat)obj.frame.origin.y * (CGFloat)view.frame.size.height/480.0f;
+            [obj setFrame:CGRectMake(obj.frame.origin.x,
+                                     y,
+                                     obj.frame.size.width,
+                                     obj.frame.size.height)];
         }
     }
-
 }
 @end
