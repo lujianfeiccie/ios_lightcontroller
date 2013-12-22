@@ -71,8 +71,9 @@
     [OtherTool setToolBarBtn:backButton];
     self.navigationItem.leftBarButtonItem = backButton;
     
+
     //加入ok按钮
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"ok" style:UIBarButtonItemStyleBordered target:self action:@selector(savebtnClick)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"PageSetting_OK", STRING_TABLE, nil) style:UIBarButtonItemStyleBordered target:self action:@selector(savebtnClick)];
     [OtherTool setToolBarBtn:saveButton];
     self.navigationItem.rightBarButtonItem = saveButton;
 

@@ -46,7 +46,7 @@
     self.navigationItem.leftBarButtonItem = backButton;
     
     //加入返回按钮
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Add"
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"SettingList_Add", STRING_TABLE, nil)
         style:UIBarButtonItemStyleBordered target:self action:@selector(addClick)];
     [OtherTool setToolBarBtn:addButton];
     self.navigationItem.rightBarButtonItem = addButton;
