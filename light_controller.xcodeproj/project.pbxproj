@@ -536,7 +536,7 @@
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					18C7AD871802BFEC00F62819 = {
-						DevelopmentTeam = 9385232JZS;
+						DevelopmentTeam = 3U5V8P94QW;
 					};
 					18C7ADA81802BFEC00F62819 = {
 						TestTargetID = 18C7AD871802BFEC00F62819;
